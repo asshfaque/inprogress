@@ -5,7 +5,7 @@
   'use strict';
 
   /* ---------- Settings ---------- */
-  var HOME_URL          = 'index.html';
+  var HOME_URL          = 'Ahome.html';
   var STORAGE_KEY       = 'introSeen';  // remembered for the current browser tab/session
   var IMAGE_WAIT_MS     = 1200;         // never wait longer than this for the image
   var SAFETY_MS         = 5600;         // backup redirect if the animation event never fires
