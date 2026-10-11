@@ -1,399 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VP League | Table</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #1a1a1a;
-      --bg2: #222;
-      --bg3: #2a2a2a;
-      --card: #1e1e1e;
-      --border: #333;
-      --text: #fff;
-      --muted: #999;
-      --blue: #00a0e3;
-      --green: #00c853;
-    }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#030B5B">
+  <title>Welcome</title>
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+  <!-- Warm up the homepage while the intro plays so it appears instantly -->
+  <link rel="prefetch" href="index.html">
 
-    body {
-      font-family: 'Inter', -apple-system, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-      min-height: 100vh;
-    }
+  <link rel="stylesheet" href="intro.css">
 
-    /* Header */
-    header {
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+  <!-- If JavaScript is disabled, go straight to the homepage -->
+  <noscript><meta http-equiv="refresh" content="0;url=index.html"></noscript>
 
-    .header-inner {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0.6rem 0.75rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .header-top {
-      display: flex;
-      align-items: center;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      text-decoration: none;
-      color: var(--text);
-    }
-
-    .logo-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      object-fit: contain;
-      background: #222;
-      display: block;
-    }
-
-    .logo-text {
-      font-size: 1rem;
-      font-weight: 700;
-    }
-
-    .nav-tabs {
-      display: flex;
-      gap: 0.35rem;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      padding-bottom: 0.15rem;
-    }
-
-    .nav-tabs::-webkit-scrollbar {
-      display: none;
-    }
-
-    .nav-tab {
-      padding: 0.4rem 0.85rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--muted);
-      background: var(--bg3);
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    .nav-tab:hover { color: var(--text); }
-
-    .nav-tab.active {
-      background: transparent;
-      color: var(--text);
-      border: 1.5px solid var(--text);
-    }
-
-    /* Hide logo + name on phone */
-    @media (max-width: 767px) {
-      .header-top {
-        display: none;
-      }
-
-      .header-inner {
-        padding: 0.5rem 0.75rem;
-      }
-    }
-
-    /* Main */
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 1rem 0.75rem;
-    }
-
-    .page-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 0.9rem;
-    }
-
-    .main-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-
-    .season-bar {
-      background: var(--bg3);
-      border-radius: 8px;
-      padding: 0.65rem 0.9rem;
-      margin-bottom: 0.75rem;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    .season-bar b {
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    .table-card {
-      background: var(--card);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    .table-scroll {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 520px;
-    }
-
-    thead th {
-      padding: 0.7rem 0.5rem;
-      text-align: left;
-      font-size: 0.7rem;
-      font-weight: 500;
-      color: var(--muted);
-      border-bottom: 1px solid var(--border);
-      white-space: nowrap;
-    }
-
-    thead th.center { text-align: center; }
-    thead th.pts { color: var(--text); font-weight: 700; }
-
-    tbody tr {
-      border-bottom: 1px solid var(--border);
-    }
-
-    tbody tr:last-child { border-bottom: none; }
-
-    td {
-      padding: 0.65rem 0.5rem;
-      font-size: 0.8rem;
-      vertical-align: middle;
-    }
-
-    td.center { text-align: center; }
-    td.pts { font-weight: 700; font-size: 0.85rem; }
-
-    .club-cell {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-weight: 600;
-    }
-
-    .club-badge {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      object-fit: contain;
-      background: #222;
-      flex-shrink: 0;
-    }
-
-    .side-card {
-      background: var(--card);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    .side-header {
-      padding: 0.85rem 1rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .side-header h3 {
-      font-size: 0.95rem;
-      font-weight: 700;
-    }
-
-    .stat-tabs {
-      display: flex;
-      padding: 0 1rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .stat-tab {
-      padding: 0.6rem 0.75rem;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--muted);
-      background: none;
-      border: none;
-      cursor: pointer;
-      border-bottom: 2px solid transparent;
-      margin-bottom: -1px;
-    }
-
-    .stat-tab.active {
-      color: var(--text);
-      border-bottom-color: var(--blue);
-    }
-
-    .stat-list { padding: 0.4rem 0; }
-
-    .stat-row {
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-      padding: 0.6rem 1rem;
-    }
-
-    .stat-avatar {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: var(--bg3);
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    .stat-info { flex: 1; min-width: 0; }
-
-    .stat-name {
-      font-weight: 600;
-      font-size: 0.85rem;
-    }
-
-    .stat-team {
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-
-    .stat-value {
-      font-weight: 700;
-      font-size: 0.95rem;
-    }
-
-    /* Desktop */
-    @media (min-width: 768px) {
-      .header-inner {
-        flex-direction: row;
-        align-items: center;
-        height: 60px;
-        padding: 0 1rem;
-      }
-
-      .nav-tabs {
-        justify-content: flex-end;
-        flex: 1;
-      }
-
-      .logo-text {
-        font-size: 1.1rem;
-      }
-
-      .container {
-        padding: 1.25rem 1rem;
-      }
-
-      .page-title {
-        font-size: 1.35rem;
-      }
-
-      .main-grid {
-        display: grid;
-        grid-template-columns: 1fr 300px;
-        gap: 1.25rem;
-      }
-    }
-  </style>
+  <!-- Runs first so returning visitors are sent to the homepage before anything paints -->
+  <script src="intro.js"></script>
 </head>
 <body>
 
-  <header>
-    <div class="header-inner">
-      <div class="header-top">
-        <a href="index.html" class="logo">
-          <img class="logo-icon" src="vp.png" alt="VP League">
-          <span class="logo-text">VP League</span>
-        </a>
-      </div>
-      <nav class="nav-tabs">
-        <a href="ahome.html" class="nav-tab">Home</a>
-        <a href="#" class="nav-tab active">Table</a>
-        <a href="matches.html" class="nav-tab">Matches</a>
-        <a href="stats.html" class="nav-tab">Stats</a>
-        <a href="players.html" class="nav-tab">Players</a>
-        <a href="ahome.html" class="nav-tab">admin</a>
-      </nav>
+  <main class="intro" id="intro">
+
+    <!-- Atmosphere: soft light on the navy field -->
+    <div class="bg" aria-hidden="true"></div>
+
+    <!-- Transition: a crimson rim and a white wash grow out of the image frame -->
+    <div class="wash wash--rim" aria-hidden="true"></div>
+    <div class="wash" aria-hidden="true"></div>
+
+    <!-- Two quick white light passes -->
+    <div class="streaks" aria-hidden="true">
+      <i class="streak streak--1"></i>
+      <i class="streak streak--2"></i>
     </div>
-  </header>
 
-  <div class="container">
-    <h1 class="page-title">Table</h1>
+    <!-- Flowing crimson light trails -->
+    <svg class="trails" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="trailGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1600" y2="0">
+          <stop offset="0"   stop-color="#C1272D" stop-opacity="0"/>
+          <stop offset="0.45" stop-color="#C1272D" stop-opacity="1"/>
+          <stop offset="1"   stop-color="#C1272D" stop-opacity="0.15"/>
+        </linearGradient>
+      </defs>
 
-    <div class="main-grid">
-      <div>
-        <div class="season-bar">
-          Season <b>2026-27</b>
-        </div>
+      <!-- Trail A (hero trail: halo + body + core) -->
+      <path class="trail trail--a" pathLength="1" stroke="url(#trailGrad)" stroke-width="14" opacity=".14"
+            d="M-120 760 C 260 820, 520 330, 900 430 S 1480 140, 1720 210"/>
+      <path class="trail trail--a" pathLength="1" stroke="url(#trailGrad)" stroke-width="4" opacity=".4"
+            d="M-120 760 C 260 820, 520 330, 900 430 S 1480 140, 1720 210"/>
+      <path class="trail trail--a" pathLength="1" stroke="url(#trailGrad)" stroke-width="1.6"
+            d="M-120 760 C 260 820, 520 330, 900 430 S 1480 140, 1720 210"/>
 
-        <div class="table-card">
-          <div class="table-scroll">
-            <table>
-              <thead>
-                <tr>
-                  <th>Club</th>
-                  <th class="center">MP</th>
-                  <th class="center">W</th>
-                  <th class="center">D</th>
-                  <th class="center">L</th>
-                  <th class="center">GF</th>
-                  <th class="center">GA</th>
-                  <th class="center">GD</th>
-                  <th class="center pts">Pts</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <div class="club-cell">
-                      <img class="club-badge" src="https://resources.premierleague.com/premierleague/badges/t3.png" alt="Arsenal">
-                      Arsenal
-                    </div>
-                  </td>
-                  <td class="center">4</td>
-                  <td class="center">4</td>
-                  <td class="center">0</td>
-                  <td class="center">0</td>
-                  <td class="center">8</td>
-                  <td class="center">1</td>
-                  <td class="center">7</td>
-                  <td class="center pts">12</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+      <!-- Trail B -->
+      <path class="trail trail--b" pathLength="1" stroke="url(#trailGrad)" stroke-width="3.5" opacity=".3"
+            d="M-120 190 C 280 90, 600 560, 1000 500 S 1420 820, 1720 720"/>
+      <path class="trail trail--b" pathLength="1" stroke="url(#trailGrad)" stroke-width="1.2" opacity=".9"
+            d="M-120 190 C 280 90, 600 560, 1000 500 S 1420 820, 1720 720"/>
+
+      <!-- Trail C (white on navy, turns navy on white) -->
+      <path class="trail trail--c" pathLength="1" stroke="currentColor" stroke-width="1" opacity=".35"
+            d="M-120 470 C 380 360, 720 690, 1100 575 S 1500 420, 1720 480"/>
+    </svg>
+
+    <!-- Subtle glowing particles (fixed positions, no random movement) -->
+    <div class="particles" aria-hidden="true">
+      <i class="p p--r" style="--x:8%;  --y:18%; --s:4px; --d:.0s"></i>
+      <i class="p p--w" style="--x:14%; --y:62%; --s:3px; --d:.4s"></i>
+      <i class="p p--w" style="--x:20%; --y:36%; --s:5px; --d:1.1s"></i>
+      <i class="p p--r" style="--x:27%; --y:82%; --s:4px; --d:.7s"></i>
+      <i class="p p--w" style="--x:33%; --y:12%; --s:3px; --d:1.6s"></i>
+      <i class="p p--r" style="--x:41%; --y:90%; --s:5px; --d:.2s"></i>
+      <i class="p p--w" style="--x:48%; --y:6%;  --s:4px; --d:1.3s"></i>
+      <i class="p p--w" style="--x:55%; --y:94%; --s:3px; --d:.9s"></i>
+      <i class="p p--r" style="--x:63%; --y:10%; --s:5px; --d:.5s"></i>
+      <i class="p p--w" style="--x:70%; --y:86%; --s:4px; --d:1.8s"></i>
+      <i class="p p--r" style="--x:76%; --y:28%; --s:3px; --d:1.0s"></i>
+      <i class="p p--w" style="--x:82%; --y:70%; --s:5px; --d:.3s"></i>
+      <i class="p p--r" style="--x:88%; --y:14%; --s:4px; --d:1.5s"></i>
+      <i class="p p--w" style="--x:91%; --y:52%; --s:3px; --d:.8s"></i>
+      <i class="p p--r" style="--x:6%;  --y:88%; --s:3px; --d:1.9s"></i>
+      <i class="p p--w" style="--x:95%; --y:84%; --s:4px; --d:.6s"></i>
+    </div>
+
+    <!-- ============ MAIN VISUAL: your image lives here ============ -->
+    <div class="stage">
+
+      <!-- Geometric shapes behind the image -->
+      <svg class="geo" viewBox="0 0 600 600" aria-hidden="true" focusable="false">
+        <circle class="geo__ring" cx="300" cy="300" r="296" fill="none" stroke="currentColor" stroke-width="1"/>
+
+        <g class="geo__spin geo__spin--diamond">
+          <rect class="geo__diamond" x="109" y="109" width="382" height="382" transform="rotate(45 300 300)"
+                pathLength="1" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <rect x="295" y="25"  width="10" height="10" fill="#C1272D"/>
+          <rect x="565" y="295" width="10" height="10" fill="#C1272D"/>
+          <rect x="295" y="565" width="10" height="10" fill="#C1272D"/>
+          <rect x="25"  y="295" width="10" height="10" fill="#C1272D"/>
+        </g>
+
+        <g class="geo__spin geo__spin--orbit">
+          <circle cx="300" cy="300" r="288" fill="none" stroke="#C1272D" stroke-width="9" stroke-opacity=".18"
+                  pathLength="100" stroke-dasharray="26 74" stroke-linecap="round"/>
+          <circle cx="300" cy="300" r="288" fill="none" stroke="#C1272D" stroke-width="2.5"
+                  pathLength="100" stroke-dasharray="26 74" stroke-linecap="round"/>
+        </g>
+      </svg>
+
+      <div class="frame">
+        <div class="frame__inner">
+
+          <!--
+            ┌──────────────────────────────────────────────────────────┐
+            │  CHANGE YOUR IMAGE HERE — edit only the src path below.  │
+            └──────────────────────────────────────────────────────────┘
+          -->
+          <img id="introImage"
+               class="frame__img"
+               src="images/my-custom-image.png"
+               alt="Brand visual"
+               decoding="async"
+               fetchpriority="high"
+               draggable="false">
+
+          <!-- Only shown if the image path above is wrong -->
+          <p class="frame__empty" id="introEmpty">Your image goes here</p>
         </div>
       </div>
     </div>
-  </div>
+
+    <!-- Brand name and tagline (edit the text freely, or delete this block) -->
+    <div class="brand">
+      <h1 class="brand__name"><span>Your Brand</span></h1>
+      <span class="brand__rule" aria-hidden="true"></span>
+      <p class="brand__tag">Your tagline goes here</p>
+    </div>
+
+    <a class="skip" id="skipIntro" href="index.html">Skip intro</a>
+
+    <!-- White curtain used only when the visitor skips -->
+    <div class="curtain" aria-hidden="true"></div>
+  </main>
 
 </body>
 </html>
