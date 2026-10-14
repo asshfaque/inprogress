@@ -10,11 +10,22 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23030B5B'/%3E%3Ccircle cx='24' cy='8' r='3' fill='%23C1272D'/%3E%3C/svg%3E">
 <!-- Security: no third-party scripts/fonts, no inline handlers, DOM built with textContent. Add CSP/HSTS/nosniff/Referrer-Policy/Permissions-Policy/frame-ancestors on the server (see index.html checklist); inline <style>/<script> need nonces or hashes in the CSP. -->
 <style>
-:root{--n:#030B5B;--r:#C1272D;--g:#F5F7FB;--b:#E1E5F0;--t:#2b3157;--ff:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+:root
+{
+    --n:#030B5B;
+    --r:#C1272D;
+    --g:#F5F7FB;
+    --b:#E1E5F0;
+    --t:#2b3157;
+    --ff:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif
+}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:84px}
 body{margin:0;font:16px/1.65 var(--ff);color:var(--t);background:#fff;overflow-x:hidden}
 h1,h2,h3{color:var(--n);line-height:1.2;margin:0 0 .5em}h1{font-size:clamp(2rem,5vw,3.2rem);letter-spacing:-.02em}h2{font-size:clamp(1.6rem,3.2vw,2.2rem)}h3{font-size:1.08rem}
-p{margin:0 0 1em}a{color:inherit}.wrap{max-width:1180px;margin:0 auto;padding:0 20px}section{padding:68px 0}.alt{background:var(--g)}[hidden]{display:none!important}
+p{margin:0 0 1em}a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+section{padding:68px 0}
+.alt{background:var(--g)}[hidden]{display:none!important}
 :focus-visible{outline:3px solid var(--r);outline-offset:2px}
 .lab{color:var(--r);font-weight:700;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:10px}
 .hd{max-width:720px;margin-bottom:32px}.hd p{color:#555c80}.hd .sh{color:var(--n);font-weight:700;font-size:1.1rem;margin-bottom:.4em}
@@ -39,56 +50,101 @@ nav ul{list-style:none;margin:0;padding:0}.top{display:flex;gap:4px;align-items:
 @media(min-width:901px){.top>li:hover>.sub,.open>.sub{display:block}}
 .burger{display:none;background:none;border:1px solid var(--b);border-radius:8px;width:44px;height:44px;cursor:pointer}.burger span{display:block;width:20px;height:2px;background:var(--n);margin:5px auto;transition:.3s}
 .menu-open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}.menu-open .burger span:nth-child(2){opacity:0}.menu-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-@media(max-width:900px){.burger{display:block}.hcta{display:none}nav{position:absolute;top:72px;left:0;right:0;background:#fff;border-bottom:1px solid var(--b);max-height:0;overflow:hidden;transition:max-height .35s}
+@media(max-width:900px){.burger{display:block}
+.hcta{display:none}
+nav{position:absolute;top:72px;left:0;right:0;background:#fff;border-bottom:1px solid var(--b);max-height:0;overflow:hidden;transition:max-height .35s}
 .menu-open nav{max-height:calc(100vh - 72px);overflow-y:auto}.top{flex-direction:column;align-items:stretch;padding:8px 20px 20px}.top>li>a,.top>li>button{width:100%;text-align:left;padding:14px 4px}.sub{position:static;box-shadow:none;border:0;padding:0 0 0 12px}.open>.sub{display:block}}
 /* hero */
-.hero{
-    position:relative;
-    isolation:isolate;
-    overflow:hidden;
-    background:var(--n);
-    color:#fff;
-    padding:96px 0 110px;
-    min-height:min(78vh,640px);
-    display:flex;
-    align-items:center
+.hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: #030B5B;
+    color: #fff;
+    padding: 96px 0 110px;
+    min-height: min(78vh, 640px);
+    display: flex;
+    align-items: center;
 }
 
-.hero .wrap{
-    position:relative;
-    width:100%;
+.hero .wrap {
+    position: relative;
+    z-index: 2;
+    width: 100%;
 }
 
 .hc{max-width:700px}
 
-.hero-vid{
-    position:absolute;
-    inset:0;width:100%;
-    height:100%;
-    object-fit:cover;
-    z-index:-2;
-    opacity:0;
-    transition:opacity 1s
+
+
+
+.hero-vid {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+
+    filter: brightness(0.75) saturate(0.85);;
+
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
 }
 
-.hero-vid.ready{opacity:1}
 
-.hero:after{
-    content:"";
-    position:absolute;
-    inset:0;z-index:-1;
-    background:linear-gradient(90deg,rgba(3,11,91,.92),rgba(3,11,91,.72) 60%,rgba(3,11,91,.5))
+
+
+
+.hero:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: rgba(3, 11, 91, 0.65);
+    opacity: 1;
+    animation: none !important;
+    transition: none !important;
 }
-.hero h1{color:#fff}.hero .lab{color:#ff8a8f}.hero .lead{color:#eef0fb}
-.hero .btn.o{background:transparent;color:#fff;border-color:#fff}.hero .btn.o:hover{background:#fff;color:var(--n)}
-.lead{font-size:1.1rem;max-width:560px}.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+
+
+
+.hero h1 {
+    color: #fff;
+}
+.hero .lab {
+    color: #ff8a8f;
+}
+.hero .lead {
+    color: #eef0fb;
+}
+
+.hero-vid.ready {
+    opacity: 1;
+}
+
+.hero .btn.o{
+    background:transparent;
+    color:#fff;
+    border-color:#fff}
+
+.hero .btn.o:hover{
+    background:#fff;
+    color:var(--n)
+}
+.lead{font-size:1.1rem;max-width:560px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
 .in{opacity:0;transform:translateY(18px);animation:up .7s forwards}@keyframes up{to{opacity:1;transform:none}}
 .rv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}.rv.rv-l{transform:translateX(-40px)}.rv.rv-r{transform:translateX(40px)}.rv.rv-z{transform:scale(.9)}.rv.on{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.in,.rv,.rv.rv-l,.rv.rv-r,.rv.rv-z,.w>span{opacity:1;transform:none}}
 /* motion */
 #prog{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--r);transform:scaleX(0);transform-origin:left;z-index:60}
 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em}.w>span{display:inline-block;transform:translateY(110%);animation:wd .8s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--i)*80ms + 150ms)}@keyframes wd{to{transform:none}}
-.hero-vid{animation:kb 24s ease-in-out infinite alternate}@keyframes kb{to{transform:scale(1.09)}}
+
 .hero .lab:before{content:"";display:inline-block;width:36px;height:2px;background:#ff8a8f;vertical-align:middle;margin-right:10px;animation:grow 1s .2s both}@keyframes grow{from{width:0}}
 .hd h2:after{content:"";display:block;height:3px;width:0;background:var(--r);margin-top:12px;transition:width .9s .3s}.hd.on h2:after{width:56px}
 .card{position:relative;overflow:hidden}.card:before{content:"";position:absolute;left:0;top:0;height:3px;width:100%;background:var(--r);transform:scaleX(0);transform-origin:left;transition:transform .4s}.card:hover:before{transform:scaleX(1)}
@@ -111,6 +167,89 @@ nav ul{list-style:none;margin:0;padding:0}.top{display:flex;gap:4px;align-items:
 footer{background:var(--n);color:#e6e8f5;padding:52px 0 24px}footer h4{color:#fff;margin:0 0 12px;font-size:.8rem;letter-spacing:.1em;border-bottom:2px solid var(--r);display:inline-block;padding-bottom:4px}
 footer ul{list-style:none;padding:0;margin:0}footer li{margin:6px 0}footer a{text-decoration:none;font-size:.9rem}footer a:hover{color:#ff8a8f}.fg{display:grid;gap:28px;grid-template-columns:repeat(2,1fr)}.fg .br{grid-column:1/-1}@media(min-width:900px){.fg{grid-template-columns:1.6fr 1fr 1fr 1fr}.fg .br{grid-column:auto}}
 .fb{border-top:1px solid rgba(255,255,255,.18);margin-top:32px;padding-top:16px;font-size:.85rem}
+
+.hero {
+    position: relative;
+    isolation: isolate;
+    background: #030B5B;
+}
+
+.hero-vid {
+    z-index: 0;
+}
+
+.hero:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: rgba(3, 11, 91, 0.45);
+    opacity: 1;
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+}
+
+.hero .wrap {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* FAQ two-column layout */
+.faq-layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 40px;
+  align-items: start;
+  margin-top: 30px;
+}
+
+/* Image container */
+.faq-image-box {
+  position: sticky;
+  top: 110px;
+}
+
+
+.faq-image {
+  display: block;
+  width: 100%;
+  height: 450px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 16px;
+  margin: 0 auto;
+}
+
+
+/* Keep FAQ questions properly aligned */
+.faq-layout .faq {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+/* Mobile and tablet layout */
+@media (max-width: 768px) {
+  .faq-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+.faq-image-box {
+  position: sticky;
+  top: 110px;
+  background: #FFFFFF;
+  border-radius: 16px;
+}
+
+  .faq-image {
+    height: 280px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -131,7 +270,7 @@ footer ul{list-style:none;padding:0;margin:0}footer li{margin:6px 0}footer a{tex
 <header id="top"><div class="wrap bar">
 <a class="logo" href="index.html" aria-label="abc BUSINESS SOLUTION home"><b>abc<i>.</i></b><small>BUSINESS<br>SOLUTION</small></a>
 <nav id="nav" aria-label="Main"><ul class="top" id="topnav"></ul></nav>
-<a class="btn hcta" href="index.html#/contact">Talk to an Expert</a>
+<a class="btn hcta" href="contact.html">Talk to an Expert</a>
 <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
 </div></header>
 
@@ -139,14 +278,14 @@ footer ul{list-style:none;padding:0;margin:0}footer li{margin:6px 0}footer a{tex
 <section class="hero" aria-labelledby="hero-h">
 <!-- Background video: save your files as videos/services-hero.mp4 (H.264) and optionally videos/services-hero.webm. Keep it short, muted, loopable and compressed (ideally under 5 MB). Use footage you own or have licensed. -->
 <video class="hero-vid" id="hv" autoplay muted loop playsinline preload="metadata" aria-hidden="true" tabindex="-1">
-    <source src="videos/services-hero.webm" type="video/webm">
-    <source src="C:\newLearning\work\in progress\8631874-uhd_3840_2160_25fps.mp4" type="video/mp4">
+    <source src="8631874-uhd_3840_2160_25fps.mp4" type="video/mp4">
 </video>
+
 <div class="wrap"><div class="hc">
 <span class="lab in">Our Services</span>
 <h1 id="hero-h">Golden Visa, Emirates ID &amp; PRO Services in the UAE</h1>
 <p class="lead in" style="animation-delay:.5s">Specialist support with residency, identity and government-related procedures. abc BUSINESS SOLUTION helps you understand the requirements, prepare your documents and take the next step with confidence.</p>
-<div class="btns in" style="animation-delay:.7s"><a class="btn" href="#overview">Explore Our Services</a><a class="btn o" href="index.html#/contact">Talk to an Expert</a></div>
+<div class="btns in" style="animation-delay:.7s"><a class="btn" href="#overview">Explore Our Services</a><a class="btn o" href="contact.html">Talk to an Expert</a></div>
 </div></div>
 </section>
 <div id="sections"></div>
@@ -156,7 +295,7 @@ footer ul{list-style:none;padding:0;margin:0}footer li{margin:6px 0}footer a{tex
 
 <script>
 "use strict";
-const CONTACT="index.html#/contact"; // existing homepage contact view
+const CONTACT="contact.html"; // existing homepage contact view
 const $=s=>document.querySelector(s);
 const h=(t,c,x,a)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;if(a)for(const k in a)e.setAttribute(k,a[k]);return e};
 const NS="http://www.w3.org/2000/svg";
@@ -208,11 +347,85 @@ sec({id:"pro-services",lab:"PRO Services",h2:"PRO Services in the UAE",sh:"Simpl
  cards(w,["users|Guidance Through Each Step|Support from first question to next steps.","doc|Organised Documentation Support|Clear checklists and tidy paperwork.","building|Solutions Based on Your Business Needs|Options matched to your activity and goals.","globe|Clear Communication Throughout the Process|Straightforward updates and explanations."].map(x=>x),"g4");s.append(w);$("#sections").append(s)}
 sec({id:"process",lab:"Process",h2:"How Our Service Process Works",desc:"A simple four-step approach.",body:w=>steps(w,["Tell Us What You Need|Share your business or service requirements.","Understand Your Options|Review relevant requirements and possible routes.","Prepare Your Documents|Receive guidance on the applicable paperwork.","Proceed With the Application|Complete the relevant steps through the appropriate authority."],"s4")});
 
+
 /* ===== FAQ ===== */
-const FAQ=[["Who may qualify for the UAE Golden Visa?","Eligibility depends on the qualifying category and the rules in force when you apply. The relevant UAE authority makes the decision."],["Can you assist with Emirates ID documentation?","We can guide you on documents and steps. We do not issue Emirates IDs, and processing depends on the authority."],["What services are included in PRO support?","PRO support covers administrative help such as document processing, renewals, amendments and submissions. The services you need are agreed with you in advance."],["What documents will I need?","Typically a passport and photograph, plus category-specific documents. We will give you a checklist for your case."],["Can you guarantee approval or a processing time?","No. Decisions and timelines belong to the relevant authority. We help you prepare and follow the correct procedure."],["Do you help with other services, such as company setup?","Yes. Business setup, free zone and mainland support are covered on our business setup pages."],["How can I request a consultation?","Use the Talk to an Expert button to open our contact form and tell us what you need."]];
-sec({id:"faq",alt:1,lab:"FAQ",h2:"Frequently Asked Questions",desc:"Short answers to common questions. Details depend on your situation and the relevant authority.",body:w=>{const f=h("div","faq rv");
- FAQ.forEach(([q,a],i)=>{const hh=h("h3"),b=h("button",null,q,{type:"button","aria-expanded":"false","aria-controls":"fa"+i,id:"fq"+i});const p=h("div","pn",a,{id:"fa"+i,role:"region","aria-labelledby":"fq"+i,hidden:""});
-  b.onclick=()=>{const o=b.getAttribute("aria-expanded")==="true";b.setAttribute("aria-expanded",!o);p.hidden=o};hh.append(b);f.append(hh,p)});w.append(f)}});
+const FAQ = [
+  ["Who may qualify for the UAE Golden Visa?",
+   "Eligibility depends on the qualifying category and the rules in force when you apply. The relevant UAE authority makes the decision."],
+
+  ["Can you assist with Emirates ID documentation?",
+   "We can guide you on documents and steps. We do not issue Emirates IDs, and processing depends on the authority."],
+
+  ["What services are included in PRO support?",
+   "PRO support covers administrative help such as document processing, renewals, amendments and submissions. The services you need are agreed with you in advance."],
+
+  ["What documents will I need?",
+   "Typically a passport and photograph, plus category-specific documents. We will give you a checklist for your case."],
+
+  ["Can you guarantee approval or a processing time?",
+   "No. Decisions and timelines belong to the relevant authority. We help you prepare and follow the correct procedure."],
+
+  ["Do you help with other services, such as company setup?",
+   "Yes. Business setup, free zone and mainland support are covered on our business setup pages."],
+
+  ["How can I request a consultation?",
+   "Use the Talk to an Expert button to open our contact form and tell us what you need."]
+];
+
+sec({
+  id: "faq",
+  alt: 1,
+  lab: "FAQ",
+  h2: "Frequently Asked Questions",
+  desc: "Short answers to common questions. Details depend on your situation and the relevant authority.",
+
+  body: w => {
+    const layout = h("div", "faq-layout");
+
+    // Left-side image
+    const imageBox = h("div", "faq-image-box");
+    const img = h("img", "faq-image");
+
+    img.src = "e3402e61030a4450abfde2280d986dae.png";
+    img.alt = "UAE business consultation";
+    img.loading = "lazy";
+
+    imageBox.append(img);
+
+    // Right-side FAQ questions
+    const f = h("div", "faq rv");
+
+    FAQ.forEach(([q, a], i) => {
+      const hh = h("h3");
+
+      const b = h("button", null, q, {
+        type: "button",
+        "aria-expanded": "false",
+        "aria-controls": "fa" + i,
+        id: "fq" + i
+      });
+
+      const p = h("div", "pn", a, {
+        id: "fa" + i,
+        role: "region",
+        "aria-labelledby": "fq" + i,
+        hidden: ""
+      });
+
+      b.onclick = () => {
+        const o = b.getAttribute("aria-expanded") === "true";
+        b.setAttribute("aria-expanded", !o);
+        p.hidden = o;
+      };
+
+      hh.append(b);
+      f.append(hh, p);
+    });
+
+    layout.append(imageBox, f);
+    w.append(layout);
+  }
+});
 
 /* ===== Final CTA ===== */
 {const s=h("section","dark fin"),w=h("div","wrap");w.append(h("h2",null,"Need Help With Your UAE Business Setup?"),h("p",null,"Tell us what you need, and our team can help you understand the next steps."));
@@ -233,8 +446,20 @@ const io="IntersectionObserver" in window?new IntersectionObserver(es=>es.forEac
 document.querySelectorAll(".rv").forEach(e=>{e.style.transitionDelay=Math.min([...e.parentElement.children].indexOf(e),6)*60+"ms";io?io.observe(e):e.classList.add("on")});
 
 /* ===== Hero background video ===== */
-{const v=$("#hv");if(v){if(matchMedia("(prefers-reduced-motion: reduce)").matches){v.pause();v.removeAttribute("autoplay");v.hidden=true}
- else{v.addEventListener("playing",()=>v.classList.add("ready"));const p=v.play();if(p&&p.catch)p.catch(()=>{})}}}
+
+{
+    const v = $("#hv");
+    if (v) {
+        if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            v.pause();
+            v.removeAttribute("autoplay");
+            v.hidden = true;
+        } else {
+            v.play().catch(() => {});
+        }
+    }
+}
+
 </script>
 </body>
 </html>
