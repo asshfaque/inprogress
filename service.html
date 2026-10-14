@@ -55,62 +55,66 @@ nav ul{list-style:none;margin:0;padding:0}.top{display:flex;gap:4px;align-items:
 nav{position:absolute;top:72px;left:0;right:0;background:#fff;border-bottom:1px solid var(--b);max-height:0;overflow:hidden;transition:max-height .35s}
 .menu-open nav{max-height:calc(100vh - 72px);overflow-y:auto}.top{flex-direction:column;align-items:stretch;padding:8px 20px 20px}.top>li>a,.top>li>button{width:100%;text-align:left;padding:14px 4px}.sub{position:static;box-shadow:none;border:0;padding:0 0 0 12px}.open>.sub{display:block}}
 /* hero */
-.hero {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-    background: #030B5B;
-    color: #fff;
-    padding: 96px 0 110px;
-    min-height: min(78vh, 640px);
-    display: flex;
-    align-items: center;
+.hero{
+    position:relative;
+    isolation:isolate;
+    overflow:hidden;
+    background:#000;              /* neutral, not blue */
+    color:#fff;
+    padding:96px 0 110px;
+    min-height:min(78vh,640px);
+    display:flex;
+    align-items:center;
+}
+.hero .wrap{position:relative;z-index:2;width:100%}
+
+.hero-vid{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    z-index:0;
+    filter:brightness(.75) saturate(.85);
 }
 
-.hero .wrap {
-    position: relative;
-    z-index: 2;
-    width: 100%;
+/* the blue effect on top of the video — adjust .45 to make it lighter/darker */
+.hero:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:1;
+    pointer-events:none;
+    background:rgba(3,11,91,.45);
 }
+
+.hero .wrap{position:relative;z-index:2;width:100%}
 
 .hc{max-width:700px}
 
 
 
 
-.hero-vid {
-    position: absolute;
-    inset: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    z-index: 0;
-
-    filter: brightness(0.75) saturate(0.85);;
-
-    animation: none !important;
-    transition: none !important;
-    transform: none !important;
+.hero-vid{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    z-index:0;
+    filter:brightness(.75) saturate(.85);
 }
 
-
-
-
-
-.hero:after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-    background: rgba(3, 11, 91, 0.65);
-    opacity: 1;
-    animation: none !important;
-    transition: none !important;
+.hero:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:1;
+    pointer-events:none;
+    background:rgba(3,11,91,.45);
 }
-
 
 
 .hero h1 {
@@ -168,87 +172,7 @@ footer{background:var(--n);color:#e6e8f5;padding:52px 0 24px}footer h4{color:#ff
 footer ul{list-style:none;padding:0;margin:0}footer li{margin:6px 0}footer a{text-decoration:none;font-size:.9rem}footer a:hover{color:#ff8a8f}.fg{display:grid;gap:28px;grid-template-columns:repeat(2,1fr)}.fg .br{grid-column:1/-1}@media(min-width:900px){.fg{grid-template-columns:1.6fr 1fr 1fr 1fr}.fg .br{grid-column:auto}}
 .fb{border-top:1px solid rgba(255,255,255,.18);margin-top:32px;padding-top:16px;font-size:.85rem}
 
-.hero {
-    position: relative;
-    isolation: isolate;
-    background: #030B5B;
-}
 
-.hero-vid {
-    z-index: 0;
-}
-
-.hero:after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-    background: rgba(3, 11, 91, 0.45);
-    opacity: 1;
-    animation: none !important;
-    transition: none !important;
-    transform: none !important;
-}
-
-.hero .wrap {
-    position: relative;
-    z-index: 2;
-}
-
-
-/* FAQ two-column layout */
-.faq-layout {
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 40px;
-  align-items: start;
-  margin-top: 30px;
-}
-
-/* Image container */
-.faq-image-box {
-  position: sticky;
-  top: 110px;
-}
-
-
-.faq-image {
-  display: block;
-  width: 100%;
-  height: 450px;
-  object-fit: contain;
-  object-position: center;
-  border-radius: 16px;
-  margin: 0 auto;
-}
-
-
-/* Keep FAQ questions properly aligned */
-.faq-layout .faq {
-  width: 100%;
-  min-width: 0;
-  margin: 0;
-}
-
-/* Mobile and tablet layout */
-@media (max-width: 768px) {
-  .faq-layout {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-.faq-image-box {
-  position: sticky;
-  top: 110px;
-  background: #FFFFFF;
-  border-radius: 16px;
-}
-
-  .faq-image {
-    height: 280px;
-  }
-}
 
 </style>
 </head>
@@ -277,10 +201,10 @@ footer ul{list-style:none;padding:0;margin:0}footer li{margin:6px 0}footer a{tex
 <main>
 <section class="hero" aria-labelledby="hero-h">
 <!-- Background video: save your files as videos/services-hero.mp4 (H.264) and optionally videos/services-hero.webm. Keep it short, muted, loopable and compressed (ideally under 5 MB). Use footage you own or have licensed. -->
-<video class="hero-vid" id="hv" autoplay muted loop playsinline preload="metadata" aria-hidden="true" tabindex="-1">
+<video class="hero-vid" id="hv" autoplay muted loop playsinline preload="auto"
+       poster="videos/services-hero-poster.jpg" aria-hidden="true" tabindex="-1">
     <source src="8631874-uhd_3840_2160_25fps.mp4" type="video/mp4">
 </video>
-
 <div class="wrap"><div class="hc">
 <span class="lab in">Our Services</span>
 <h1 id="hero-h">Golden Visa, Emirates ID &amp; PRO Services in the UAE</h1>
@@ -347,85 +271,11 @@ sec({id:"pro-services",lab:"PRO Services",h2:"PRO Services in the UAE",sh:"Simpl
  cards(w,["users|Guidance Through Each Step|Support from first question to next steps.","doc|Organised Documentation Support|Clear checklists and tidy paperwork.","building|Solutions Based on Your Business Needs|Options matched to your activity and goals.","globe|Clear Communication Throughout the Process|Straightforward updates and explanations."].map(x=>x),"g4");s.append(w);$("#sections").append(s)}
 sec({id:"process",lab:"Process",h2:"How Our Service Process Works",desc:"A simple four-step approach.",body:w=>steps(w,["Tell Us What You Need|Share your business or service requirements.","Understand Your Options|Review relevant requirements and possible routes.","Prepare Your Documents|Receive guidance on the applicable paperwork.","Proceed With the Application|Complete the relevant steps through the appropriate authority."],"s4")});
 
-
 /* ===== FAQ ===== */
-const FAQ = [
-  ["Who may qualify for the UAE Golden Visa?",
-   "Eligibility depends on the qualifying category and the rules in force when you apply. The relevant UAE authority makes the decision."],
-
-  ["Can you assist with Emirates ID documentation?",
-   "We can guide you on documents and steps. We do not issue Emirates IDs, and processing depends on the authority."],
-
-  ["What services are included in PRO support?",
-   "PRO support covers administrative help such as document processing, renewals, amendments and submissions. The services you need are agreed with you in advance."],
-
-  ["What documents will I need?",
-   "Typically a passport and photograph, plus category-specific documents. We will give you a checklist for your case."],
-
-  ["Can you guarantee approval or a processing time?",
-   "No. Decisions and timelines belong to the relevant authority. We help you prepare and follow the correct procedure."],
-
-  ["Do you help with other services, such as company setup?",
-   "Yes. Business setup, free zone and mainland support are covered on our business setup pages."],
-
-  ["How can I request a consultation?",
-   "Use the Talk to an Expert button to open our contact form and tell us what you need."]
-];
-
-sec({
-  id: "faq",
-  alt: 1,
-  lab: "FAQ",
-  h2: "Frequently Asked Questions",
-  desc: "Short answers to common questions. Details depend on your situation and the relevant authority.",
-
-  body: w => {
-    const layout = h("div", "faq-layout");
-
-    // Left-side image
-    const imageBox = h("div", "faq-image-box");
-    const img = h("img", "faq-image");
-
-    img.src = "e3402e61030a4450abfde2280d986dae.png";
-    img.alt = "UAE business consultation";
-    img.loading = "lazy";
-
-    imageBox.append(img);
-
-    // Right-side FAQ questions
-    const f = h("div", "faq rv");
-
-    FAQ.forEach(([q, a], i) => {
-      const hh = h("h3");
-
-      const b = h("button", null, q, {
-        type: "button",
-        "aria-expanded": "false",
-        "aria-controls": "fa" + i,
-        id: "fq" + i
-      });
-
-      const p = h("div", "pn", a, {
-        id: "fa" + i,
-        role: "region",
-        "aria-labelledby": "fq" + i,
-        hidden: ""
-      });
-
-      b.onclick = () => {
-        const o = b.getAttribute("aria-expanded") === "true";
-        b.setAttribute("aria-expanded", !o);
-        p.hidden = o;
-      };
-
-      hh.append(b);
-      f.append(hh, p);
-    });
-
-    layout.append(imageBox, f);
-    w.append(layout);
-  }
-});
+const FAQ=[["Who may qualify for the UAE Golden Visa?","Eligibility depends on the qualifying category and the rules in force when you apply. The relevant UAE authority makes the decision."],["Can you assist with Emirates ID documentation?","We can guide you on documents and steps. We do not issue Emirates IDs, and processing depends on the authority."],["What services are included in PRO support?","PRO support covers administrative help such as document processing, renewals, amendments and submissions. The services you need are agreed with you in advance."],["What documents will I need?","Typically a passport and photograph, plus category-specific documents. We will give you a checklist for your case."],["Can you guarantee approval or a processing time?","No. Decisions and timelines belong to the relevant authority. We help you prepare and follow the correct procedure."],["Do you help with other services, such as company setup?","Yes. Business setup, free zone and mainland support are covered on our business setup pages."],["How can I request a consultation?","Use the Talk to an Expert button to open our contact form and tell us what you need."]];
+sec({id:"faq",alt:1,lab:"FAQ",h2:"Frequently Asked Questions",desc:"Short answers to common questions. Details depend on your situation and the relevant authority.",body:w=>{const f=h("div","faq rv");
+ FAQ.forEach(([q,a],i)=>{const hh=h("h3"),b=h("button",null,q,{type:"button","aria-expanded":"false","aria-controls":"fa"+i,id:"fq"+i});const p=h("div","pn",a,{id:"fa"+i,role:"region","aria-labelledby":"fq"+i,hidden:""});
+  b.onclick=()=>{const o=b.getAttribute("aria-expanded")==="true";b.setAttribute("aria-expanded",!o);p.hidden=o};hh.append(b);f.append(hh,p)});w.append(f)}});
 
 /* ===== Final CTA ===== */
 {const s=h("section","dark fin"),w=h("div","wrap");w.append(h("h2",null,"Need Help With Your UAE Business Setup?"),h("p",null,"Tell us what you need, and our team can help you understand the next steps."));
