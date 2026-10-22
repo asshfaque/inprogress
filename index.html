@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>abc BUSINESS SOLUTION | UAE Business Setup &amp; Corporate Services</title>
-<meta name="description" content="Company formation, licensing, visas and corporate services in the UAE, all under one roof.">
-<meta name="theme-color" content="#030B5B">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Alphytix BUSINESS SOLUTION | UAE Business Setup &amp; Corporate Services</title>
+
+  <meta name="description" content="Company formation, licensing, visas and corporate services in the UAE, all under one roof.">
+
+  <meta name="theme-color" content="#030B5B">
+
+  <link rel="icon" type="image/png" href="Alpha.png">
+
 <style>
 :root{--n:#030B5B;--r:#C1272D;--w:#fff;--g:#F5F7FB;--b:#E1E5F0;--t:#2b3157;--n2:#2E3192;--r2:#C10618;--ff:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
 *{box-sizing:border-box}
@@ -26,7 +32,9 @@ section{padding:72px 0}
 .lab:after{content:"";position:absolute;left:0;bottom:0;height:2px;width:36px;background:var(--r2)}
 .hd{max-width:680px;margin-bottom:36px}
 .hd p{color:#555c80}
-.btn{display:inline-block;position:relative;overflow:hidden;border:2px solid var(--r);background:var(--r);color:#fff;padding:12px 24px;border-radius:8px;font:600 1rem var(--ff);text-decoration:none;cursor:pointer;transition:transform .25s,background .25s,border-color .25s}
+.btn{
+  display:inline-block;position:relative;overflow:hidden;border:2px solid var(--r);background:var(--r);color:#fff;padding:12px 24px;
+  border-radius:20px;font:600 1rem var(--ff);text-decoration:none;cursor:pointer;transition:transform .25s,background .25s,border-color .25s}
 .btn:hover{background:var(--r2);border-color:var(--r2);transform:translateY(-2px)}
 .btn.o{background:#fff;color:var(--n);border-color:var(--n)}
 .btn.o:hover{background:var(--n2);color:#fff;border-color:var(--n2)}
@@ -61,7 +69,13 @@ nav ul{list-style:none;margin:0;padding:0}
 .top>li>a:after,.top>li>button:after{content:"";position:absolute;left:9px;right:9px;bottom:4px;height:2px;background:var(--r);transform:scaleX(0);transition:.25s}
 .top>li:hover>a:after,.top>li:hover>button:after,.top>li.open>button:after{transform:scaleX(1)}
 .sub{display:none;position:absolute;top:100%;left:0;min-width:230px;background:#fff;border:1px solid var(--b);border-radius:10px;box-shadow:0 12px 28px rgba(3,11,91,.14);padding:8px}
-.sub a{display:block;padding:8px 12px;border-radius:6px;text-decoration:none;font-size:.9rem;color:var(--n)}
+.sub a{
+  display:block;
+  padding:8px 12px;
+  border-radius:6px;
+  text-decoration:none;
+  font-size:.9rem;
+  color:var(--n)}
 .sub a:hover{background:var(--g);color:var(--r)}
 @media(min-width:1081px){.top>li:hover>.sub,.top>li.open>.sub{display:block}}
 .burger{display:none;background:none;border:1px solid var(--b);border-radius:8px;width:44px;height:44px;cursor:pointer;flex-shrink:0}
@@ -307,7 +321,7 @@ footer a:hover{color:#ff8a8f;transform:translateX(4px)}
   background: #030B5B;
   color: #FFFFFF;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 30px;
   font-size: 14px;
   font-weight: 700;
   transition: background 0.3s ease, transform 0.3s ease;
@@ -720,7 +734,7 @@ footer a:hover{color:#ff8a8f;transform:translateX(4px)}
   background: #C1272D;
   color: #FFFFFF;
   border: 1px solid #C1272D;
-  border-radius: 7px;
+  border-radius: 20px;
 
   font-size: 13px;
   font-weight: 600;
@@ -1517,7 +1531,7 @@ footer a:hover{color:#ff8a8f;transform:translateX(4px)}
     margin-top: auto;
     padding: 12px 20px;
     border: 0;
-    border-radius: 8px;
+    border-radius: 20px;
     background: #C1272D;
     color: #FFFFFF;
     font: inherit;
@@ -1741,6 +1755,214 @@ footer a:hover{color:#ff8a8f;transform:translateX(4px)}
   color: #C1272D !important;
 }
 
+
+
+/* ===== CONSISTENT SERVICES MEGA MENU ===== */
+
+/* Desktop menu */
+@media (min-width: 1081px) {
+  #mainNav .mega-menu {
+    left: 50%;
+    right: auto;
+    top: calc(100% + 1px);
+    transform: translateX(-50%);
+    width: min(760px, calc(100vw - 40px));
+    max-width: calc(100vw - 40px);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    padding: 25px;
+    background: #fff;
+    border: 1px solid #E1E5F0;
+    border-radius: 10px;
+    box-shadow: 0 12px 30px rgba(3, 11, 91, .14);
+  }
+
+  #mainNav .mega-column {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    min-width: 0;
+  }
+
+  #mainNav .mega-column h4 {
+    margin: 0 0 5px;
+    padding: 0 0 10px;
+    color: #C1272D;
+    font: 700 12px/1.5 var(--ff);
+  }
+
+  #mainNav .mega-column h4 a {
+    color: #C1272D;
+    text-decoration: none;
+  }
+
+  #mainNav .mega-column > a,
+  #mainNav .mega-links a {
+    display: block;
+    padding: 7px 0;
+    color: #030B5B;
+    font: 400 13px/1.5 var(--ff);
+    text-decoration: none;
+    overflow-wrap: anywhere;
+  }
+
+  #mainNav .mega-column > a:hover,
+  #mainNav .mega-links a:hover {
+    color: #C1272D;
+    background: transparent;
+  }
+}
+
+/* Mobile and tablet menu */
+@media (max-width: 1080px) {
+  #mainNav .dropdown.open > .mega-menu {
+    display: grid !important;
+    position: static;
+    left: auto;
+    right: auto;
+    transform: none;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    width: 100%;
+    max-width: 100%;
+    max-height: none;
+    overflow: visible;
+    margin: 0;
+    padding: 8px 4px 14px;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: #fff;
+  }
+
+  #mainNav .mega-column {
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  #mainNav .mega-column h4 {
+    display: block;
+    width: 100%;
+    margin: 0 0 5px;
+    padding: 0 0 7px;
+    border-bottom: 1px solid #E1E5F0;
+    color: #C1272D;
+    font: 700 12px/1.5 var(--ff);
+  }
+
+  #mainNav .mega-column h4 a {
+    display: block;
+    padding: 0;
+    color: #C1272D;
+    font: inherit;
+    text-decoration: none;
+  }
+
+  #mainNav .mega-column > a,
+  #mainNav .mega-links a {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 7px 0;
+    color: #030B5B;
+    font: 400 13px/1.5 var(--ff);
+    text-decoration: none;
+    overflow-wrap: anywhere;
+  }
+
+  #mainNav .mega-column > a:hover,
+  #mainNav .mega-links a:hover {
+    color: #C1272D;
+    background: transparent;
+  }
+}
+
+/* FIX: Keep header contact and social icons visible on mobile */
+@media (max-width: 1080px) {
+  #mainNav .social-icons,
+  #mainNav .social-links,
+  #mainNav .header-social,
+  #mainNav .header-contact,
+  #mainNav .contact-info,
+  #mainNav .top-contact {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+
+/* Remove orange underline from mobile burger-menu headings */
+@media (max-width: 1080px) {
+  #mainNav > li > a::after,
+  #mainNav > li > button::after,
+  #mainNav .dropdown-menu a::after,
+  #mainNav .dropdown-toggle::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  #mainNav > li > a,
+  #mainNav > li > button,
+  #mainNav .dropdown-menu a {
+    text-decoration: none !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Remove orange color from main headings in mobile menu only */
+@media (max-width: 1080px) {
+  #mainNav > li > a,
+  #mainNav > li > .dropdown-toggle {
+    color: #030B5B !important;
+  }
+
+  #mainNav > li > a:hover,
+  #mainNav > li > a:focus,
+  #mainNav > li > .dropdown-toggle:hover,
+  #mainNav > li > .dropdown-toggle:focus,
+  #mainNav > li > .dropdown-toggle[aria-expanded="true"] {
+    color: #030B5B !important;
+  }
+}
+
+
+/* footer phone view three privact,terms,cookies */
+@media (max-width: 600px) {
+  .fb {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .fb nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .fb nav a {
+    font-size: 10px;
+    white-space: nowrap;
+  }
+
+  .fb > span {
+    font-size: 10px;
+    line-height: 1.5;
+  }
+}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
@@ -1849,9 +2071,9 @@ footer a:hover{color:#ff8a8f;transform:translateX(4px)}
         BUSINESS SETUP <span class="arrow">▾</span>
       </button>
       <ul class="dropdown-menu">
-        <li><a href="index.html#solutions">Free Zones</a></li>
-        <li><a href="index.html#solutions">Mainland</a></li>
-        <li><a href="index.html#solutions">Offshore Setup</a></li>
+        <li><a href="demo.html#solutions">Free Zones</a></li>
+        <li><a href="demo.html#solutions">Mainland</a></li>
+        <li><a href="demo.html#solutions">Offshore Setup</a></li>
       </ul>
     </li>
 
@@ -1986,7 +2208,7 @@ footer a:hover{color:#ff8a8f;transform:translateX(4px)}
         </div>
 
         <div class="vis in" style="animation-delay:.4s">
-		<img src="home_small.jpg" alt="Business professionals collaborating in an office" style="width:100%;height:100%;object-fit:cover">
+		< src="C:\newLearning\work\in progress\git\home_small.jpg" alt="Business professionals collaborating in an office" style="width:100%;height:100%;object-fit:cover">
             <div class="float">
                 <b>Mainland, free zone or offshore</b>
                 We help you compare structures before you decide.
@@ -2613,7 +2835,7 @@ const FOOT=[
 ["BUSINESS SETUP",["Company Formation","Mainland","Free Zone","Offshore"],"#solutions"],
 ["VISA SERVICES",["Golden Visa","Emirates ID","Other Pro Services"],"#services"],
 ["SERVICES",["Banking","Accounting","VAT","Corporate Tax","Insurance","Renewal","License Amendment","Business Closure"],"#services"],
-["COMPANY",["About","Why Alphytix","Contact"],"#why"],
+["COMPANY",["About","Why Alphytix"],"#why"],
 ["LET'S CONNECT", ["WhatsApp", "Call Us", "Email Us"], "#connect"]
 ];
 {
