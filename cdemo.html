@@ -161,6 +161,29 @@ footer a:hover{color:#ff8a8f}
   .footer-legal a{font-size:10px}
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* adjusting the navigations in phone because headings are close to edges */
+/* Mobile navigation: add space on both sides */
+@media (max-width: 900px) {
+
+    nav {
+        box-sizing: border-box;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    nav a,
+    nav button {
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    /* Keep menu text and arrows inside the available width */
+    nav a,
+    nav button {
+        overflow-wrap: break-word;
+    }
+}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
