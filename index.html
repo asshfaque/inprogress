@@ -113,7 +113,6 @@ nav ul{list-style:none;margin:0;padding:0}
     background-position: center;
     background-repeat: no-repeat;
 }
-
 .hero .wrap {
     position: relative;
     z-index: 1;
@@ -141,22 +140,7 @@ nav ul{list-style:none;margin:0;padding:0}
     min-height: 400px;
 }
 
-.float {
-    position: absolute;
-    bottom: 30px;
-    left: 0;
-    max-width: 300px;
-    padding: 20px;
-    border-radius: 12px;
-    background: #FFFFFF;
-    color: #030B5B;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
-}
 
-.float b {
-    display: block;
-    margin-bottom: 8px;
-}
 
 /* Mobile layout */
 @media (max-width: 768px) {
@@ -179,9 +163,6 @@ nav ul{list-style:none;margin:0;padding:0}
 .trust{font-size:.88rem;border-left:3px solid var(--r);padding-left:12px;color:#555c80}
 .vis{position:relative;width:100%;min-height:320px;aspect-ratio:5/4;border-radius:16px;overflow:hidden;background:linear-gradient(160deg,#fff,#e9edf8,#dfe3f5);border:1px solid var(--b);isolation:isolate}
 .vis svg{position:absolute;inset:0;width:100%;height:100%;display:block}
-.float{position:absolute;left:16px;bottom:16px;right:16px;max-width:300px;background:#fff;border-radius:10px;padding:14px 16px;box-shadow:0 10px 26px rgba(3,11,91,.18);border-left:4px solid var(--r);font-size:.88rem;animation:floatCard 4s 1.6s ease-in-out infinite}
-.float b{color:var(--n);display:block}
-.float p{margin:4px 0 0}
 @keyframes floatCard{50%{transform:translateY(-6px)}}
 .ring{transform-box:fill-box;transform-origin:center;animation:spin 28s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -1380,19 +1361,20 @@ footer a:hover{color:#ff8a8f;transform:translateX(4px)}
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 6px;
+    padding: 12px;
     box-sizing: border-box;
   }
 
   .mobile-logo-slide .logo-card img {
     display: block;
-    max-width: 100%;
+    max-width: 180px;
     max-height: 60px;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100px;
     object-fit: contain;
   }
 }
+
 
 /* Match dropdown button hover effect with navigation links */
 #mainNav .dropdown-toggle .arrow {
@@ -1964,6 +1946,429 @@ footer a:hover{color:#ff8a8f;transform:translateX(4px)}
   }
 }
 
+/* css for the home page form */
+/* Let's Connect form */
+
+
+.connect-form-wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+
+    align-items: start;
+    justify-items: stretch;
+    gap: 20px;
+
+    width: 100%;
+    max-width: 100%;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 22px !important;
+
+    /* Background image with blue overlay */
+    background:
+         linear-gradient(
+            135deg,
+            rgba(153, 154, 176, 0.88),
+            rgba(228, 228, 228, 0.82)
+        );
+        /* url("https://images.openai.com/static-rsc-4/u6anVyrRt45G-1S6khgumbSELf4arGC_C_GnOtpp0xhKlOc9koo4_Q0fBbWPwhZ3v4c_EgaSHRiG9Po1zymJWmhVYQGv0Oo5VdZ4CZHvuW5T64Zv3pl4lPMdhl8uIV_VWwPoJM48--PruaK3tUTI4fcPTym2KrS1t-z7PMtWZ5frK0ed22BEIxBUkJdmUtfM?purpose=fullsize") center / cover no-repeat; */
+
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 12px 35px rgba(3, 11, 91, 0.15);
+
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+
+
+/* Intro panel */
+
+.connect-intro {
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    align-self: start;
+    justify-self: start;
+    text-align: left;
+}
+
+
+.connect-intro h2 {
+    margin: 0 0 8px;
+}
+
+.connect-intro h2 span {
+    color: var(--r);
+}
+
+.connect-intro > p {
+    margin: 0;
+    color: #68708a;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.connect-benefits {
+    margin-top: 14px;
+    gap: 8px;
+}
+
+.connect-benefits span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--n);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.connect-benefits i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 21px;
+    height: 21px;
+    color: var(--r);
+    background: #fff0f0;
+    border-radius: 50%;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 800;
+}
+
+/* Form grid */
+.connect-form-wrapper form {
+    min-width: 0;
+}
+
+.mini-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px 12px;
+}
+
+.mini-field {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.mini-field label {
+    margin-bottom: 5px;
+    color: var(--n);
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.mini-field label b {
+    color: var(--r);
+}
+
+.mini-field input,
+.mini-field select,
+.mini-field textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    height: 36px;
+    padding: 8px 9px;
+    border: 1px solid #dfe3ef;
+    border-radius: 6px;
+    background: #fafbfe;
+    color: var(--n);
+    font-family: inherit;
+    font-size: 11px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color .2s, box-shadow .2s,
+                background .2s;
+}
+
+.mini-field input::placeholder,
+.mini-field textarea::placeholder {
+    color: #9299ad;
+    opacity: 1;
+}
+
+.mini-field input:focus,
+.mini-field select:focus,
+.mini-field textarea:focus {
+    border-color: var(--n);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(3, 11, 91, .07);
+}
+
+.mini-field select {
+    cursor: pointer;
+}
+
+.mini-message {
+    grid-column: 1 / -1;
+}
+
+.mini-field textarea {
+    height: 58px;
+    min-height: 58px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+/* Submit button */
+.mini-submit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    margin-top: 1px;
+    padding: 11px 15px;
+    color: #fff;
+    background: var(--n);
+    border: 1px solid var(--n);
+    border-radius: 7px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .2s, border-color .2s,
+                transform .2s, box-shadow .2s;
+}
+
+.mini-submit-arrow {
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1;
+    transition: transform .2s;
+}
+
+.mini-submit:hover {
+    background: var(--r);
+    border-color: var(--r);
+    box-shadow: 0 5px 14px rgba(193, 39, 45, .18);
+    transform: translateY(-1px);
+}
+
+.mini-submit:hover .mini-submit-arrow {
+    transform: translateX(3px);
+}
+
+/* Privacy and feedback */
+.mini-privacy {
+    margin: 0px 0 0;
+    color: #000000;
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+.connect-form-wrapper .form-status {
+    margin-top: 6px;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+/* Hidden honeypot */
+.mini-honeypot {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* Tablet */
+@media (max-width: 760px) {
+    .connect-form-wrapper {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+        padding: 14px !important;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Hide the intro to give the form more space */
+    .connect-intro {
+        display: none;
+    }
+
+    .connect-form-wrapper form {
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+    }
+
+    .mini-form-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .mini-field {
+        min-width: 0;
+    }
+
+    .mini-field input,
+    .mini-field select,
+    .mini-field textarea {
+        width: 100%;
+        min-width: 0;
+        font-size: 14px;
+    }
+
+    .mini-message {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Small phones */
+@media (max-width: 400px) {
+    .connect-form-wrapper {
+        padding: 10px !important;
+        border-radius: 10px;
+    }
+
+    .connect-form-wrapper form {
+        padding: 0;
+    }
+
+    .mini-form-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .mini-message {
+        grid-column: auto;
+    }
+
+    .mini-field label {
+        font-size: 11px;
+    }
+
+    .mini-field input,
+    .mini-field select,
+    .mini-field textarea {
+        width: 100%;
+        min-height: 40px;
+        padding: 9px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+    .mini-field textarea {
+        height: 65px;
+        min-height: 65px;
+    }
+
+    .mini-submit {
+        width: 100%;
+        padding: 11px;
+    }
+}
+
+
+/* code for making fit the form */
+
+/* Responsive compact form */
+@media (max-width: 760px) {
+    .connect-form-wrapper {
+        display: block;
+        padding: 6px !important;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    /* Hide intro on phones */
+    .connect-form-wrapper .connect-intro {
+        display: none !important;
+    }
+
+    .connect-form-wrapper form {
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .mini-form-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px;
+    }
+
+    .mini-field {
+        min-width: 0;
+    }
+
+    .mini-field label {
+        margin-bottom: 2px;
+        font-size: 9px;
+        line-height: 1.2;
+    }
+
+    .mini-field input,
+    .mini-field select {
+        width: 100%;
+        min-width: 0;
+        height: 29px;
+        min-height: 29px;
+        padding: 4px;
+        font-size: 11px;
+        box-sizing: border-box;
+    }
+
+    .mini-message {
+        grid-column: 1 / -1;
+    }
+
+    .mini-field textarea {
+        width: 100%;
+        height: 38px;
+        min-height: 38px;
+        padding: 5px;
+        font-size: 11px;
+        box-sizing: border-box;
+    }
+
+    .mini-submit {
+        min-height: 30px;
+        margin-top: 5px;
+        padding: 5px 8px;
+        font-size: 10px;
+    }
+
+    .mini-submit-arrow {
+        font-size: 15px;
+    }
+
+    .mini-privacy {
+        margin-top: 3px;
+        font-size: 8px;
+        line-height: 1.3;
+    }
+
+    .connect-form-wrapper .form-status {
+        margin-top: 3px;
+        font-size: 9px;
+    }
+}
+
+/* Extra-small phones */
+@media (max-width: 360px) {
+    .connect-form-wrapper {
+        padding: 4px !important;
+    }
+
+    .mini-form-grid {
+        gap: 5px;
+    }
+
+    .mini-field input,
+    .mini-field select {
+        font-size: 10px;
+        padding: 3px;
+    }
+}
 
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -2208,15 +2613,110 @@ footer a:hover{color:#ff8a8f;transform:translateX(4px)}
                 before you commit.
             </p>
         </div>
+        <!-- form in home page -->
 
-        <div class="vis in" style="animation-delay:.4s">
-		<img src="home_small.jpg" alt="Business professionals collaborating in an office" style="width:100%;height:100%;object-fit:cover">
-            <div class="float">
-                <b>Mainland, free zone or offshore</b>
-                We help you compare structures before you decide.
-            </div>
+<div class="vis in connect-form-wrapper" style="animation-delay:.4s">
+
+    <div class="connect-intro">
+        <h2>Let's <span>Connect.</span></h2>
+        <p>Tell us what you need. We'll help you find the right solution for your UAE business.</p>
+
+        <div class="connect-benefits">
+            <span><i>✓</i> Expert guidance</span>
+            <span><i>✓</i> Personalised support</span>
         </div>
     </div>
+
+    <form id="enquiryForm">
+        <div class="mini-form-grid">
+
+            <div class="mini-field">
+                <label for="name">Full Name <b>*</b></label>
+                <input id="name" name="name" type="text"
+                    placeholder="Your full name"
+                    autocomplete="name" maxlength="100" required>
+            </div>
+
+            <div class="mini-field">
+                <label for="phone">Phone Number <b>*</b></label>
+                <input id="phone" name="phone" type="tel"
+                    placeholder="+971 ..."
+                    autocomplete="tel" maxlength="25"
+                    pattern="[+0-9() .-]{7,25}" required>
+            </div>
+
+            <div class="mini-field">
+                <label for="email">Email Address <b>*</b></label>
+                <input id="email" name="email" type="email"
+                    placeholder="you@example.com"
+                    autocomplete="email" maxlength="254" required>
+            </div>
+
+            <div class="mini-field">
+                <label for="nationality">Nationality <b>*</b></label>
+                <input id="nationality" name="nationality" type="text"
+                    placeholder="Your nationality"
+                    maxlength="80" required>
+            </div>
+
+            <div class="mini-field">
+                <label for="country">Current Country <b>*</b></label>
+                <input id="country" name="country" type="text"
+                    placeholder="Country you live in"
+                    autocomplete="country-name" maxlength="80" required>
+            </div>
+
+            <div class="mini-field">
+                <label for="service">Service Required <b>*</b></label>
+                <select id="service" name="service" required>
+                    <option value="" disabled selected>Select service</option>
+                    <option>Business Setup</option>
+                    <option>Mainland</option>
+                    <option>Free Zone</option>
+                    <option>Visa</option>
+                    <option>PRO</option>
+                    <option>Banking</option>
+                    <option>Accounting</option>
+                    <option>Tax</option>
+                    <option>Renewal</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+            <div class="mini-field mini-message">
+                <label for="message">How can we help? <b>*</b></label>
+                <textarea id="message" name="message"
+                    placeholder="Briefly describe your requirements..."
+                    maxlength="3000" required></textarea>
+            </div>
+
+        </div>
+
+        <!-- Honeypot spam protection -->
+        <div class="mini-honeypot" aria-hidden="true">
+            <label for="website">Leave empty</label>
+            <input id="website" name="website" type="text"
+                tabindex="-1" autocomplete="off">
+        </div>
+       
+
+        <button type="submit" class="mini-submit">
+            <span>Let's Connect</span>
+            <span class="mini-submit-arrow" aria-hidden="true">→</span>
+        </button>
+
+        <p class="mini-privacy" style="color:black">
+            Your information will be used to respond to your enquiry.
+        </p>
+
+        <div class="form-status" id="formStatus"
+            role="status" aria-live="polite"></div>
+    </form>
+
+</div>
+
+
+      </div>
 </section>
 
 <!-- WHAT IS ABC SECTION -->
@@ -2335,21 +2835,19 @@ footer a:hover{color:#ff8a8f;transform:translateX(4px)}
 
         <!-- GROUP 1: LOGOS 1–5 -->
         <div class="logo-slide">
-          <div class="logo-card">
-            <img src="C:\newLearning\work\in progress\Authority Logos\Authority Logos\Dubai Court.webp" alt="Partner 1">
-          </div>
-          <div class="logo-card"><img src="Dubai Economy.png" alt="Partner 2"></div>
-          <div class="logo-card"><img src="JD-WM-Crest-RGB-vertical.jpg" alt="Partner 3"></div>
-          <div class="logo-card"><img src="land-department.png" alt="Partner 4"></div>
-          <div class="logo-card"><img src="MOFA.jpg" alt="Partner 5"></div>
+          <!-- <div class="logo-card"><img src="" alt="Partner 1"></div> -->
+          <div class="logo-card"><img src="Authoritative logogs-01.png" alt="Partner 2"></div>
+          <div class="logo-card"><img src="Authoritative logogs-02.png" alt="Partner 3"></div>
+          <div class="logo-card"><img src="Authoritative logogs-03.png" alt="Partner 4"></div>
+          <div class="logo-card"><img src="Authoritative logogs-04.png" alt="Partner 5"></div>
         </div>
 
         <!-- GROUP 2: LOGOS 6–9 -->
         <div class="logo-slide">
-          <div class="logo-card"><img src="mohre.webp" alt="Partner 6"></div>
-          <div class="logo-card"><img src="rera.png" alt="Partner 7"></div>
-          <div class="logo-card"><img src="RTA.png" alt="Partner 8"></div>
-          <div class="logo-card"><img src="United Arab Emirates Ministry of Justice.png" alt="Partner 9"></div>
+          <div class="logo-card"><img src="Authoritative logogs-05.png" alt="Partner 6"></div>
+          <div class="logo-card"><img src="Authoritative logogs-06.png" alt="Partner 7"></div>
+          <div class="logo-card"><img src="Authoritative logogs-07.png" alt="Partner 8"></div>
+          <div class="logo-card"><img src="Authoritative logogs-08.png" alt="Partner 9"></div>
         </div>
 
       </div>
@@ -2363,40 +2861,40 @@ footer a:hover{color:#ff8a8f;transform:translateX(4px)}
     <!-- PART 1: Logos 1–3 -->
     <div class="mobile-logo-slide">
       <div class="logo-card">
-        <img src="Dubai Court.webp" alt="Partner 1">
+        <img src="Authoritative logogs-01.png" alt="Partner 1">
       </div>
       <div class="logo-card">
-        <img src="Dubai Economy.png" alt="Partner 2">
+        <img src="Authoritative logogs-02.png" alt="Partner 2">
       </div>
       <div class="logo-card">
-        <img src="JD-WM-Crest-RGB-vertical.jpg"" alt="Partner 3">
+        <img src="Authoritative logogs-03.png" alt="Partner 3">
       </div>
     </div>
 
     <!-- PART 2: Logos 4–6 -->
     <div class="mobile-logo-slide">
       <div class="logo-card">
-        <img src="land-department.png" alt="Partner 4">
+        <img src="Authoritative logogs-04.png" alt="Partner 4">
       </div>
       <div class="logo-card">
-        <img src="MOFA.jpg" alt="Partner 5">
+        <img src="Authoritative logogs-05.png" alt="Partner 5">
       </div>
       <div class="logo-card">
-        <img src="mohre.webp" alt="Partner 6">
+        <img src="Authoritative logogs-06.png" alt="Partner 6">
       </div>
     </div>
 
     <!-- PART 3: Logos 7–9 -->
     <div class="mobile-logo-slide">
       <div class="logo-card">
-        <img src="rera.png" alt="Partner 7">
+        <img src="Authoritative logogs-07.png" alt="Partner 7">
       </div>
       <div class="logo-card">
-        <img src="RTA.png" alt="Partner 8">
+        <img src="Authoritative logogs-08.png" alt="Partner 8">
       </div>
-      <div class="logo-card">
+      <!-- <div class="logo-card">
         <img src="United Arab Emirates Ministry of Justice.png" alt="Partner 9">
-      </div>
+      </div> -->
     </div>
 
   </div>
