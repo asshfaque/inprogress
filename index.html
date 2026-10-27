@@ -1350,7 +1350,7 @@ footer a:hover{color:#ff8a8f;transform:translateX(4px)}
     grid-template-columns: repeat(3, minmax(0, 1fr));
     align-items: center;
     justify-items: center;
-    gap: 10px;
+    gap: 12px;
     padding: 12px 8px;
   }
 
@@ -1361,18 +1361,26 @@ footer a:hover{color:#ff8a8f;transform:translateX(4px)}
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 12px;
+    padding: 10px;
     box-sizing: border-box;
   }
 
   .mobile-logo-slide .logo-card img {
     display: block;
-    max-width: 180px;
+    max-width: 200px;
     max-height: 60px;
     width: 100%;
-    height: 100px;
+    height: 120px;
     object-fit: contain;
   }
+}
+
+/* Extra-small phones */
+@media (max-width: 400px) {
+    .mobile-logo-slide .logo-card img {
+        max-width: 170px;
+        height: 105px;
+    }
 }
 
 
@@ -2370,6 +2378,26 @@ footer a:hover{color:#ff8a8f;transform:translateX(4px)}
     }
 }
 
+/* Add inner spacing on mobile phones */
+@media (max-width: 760px) {
+    .connect-form-wrapper {
+        padding: 20px !important;
+        box-sizing: border-box;
+    }
+
+    .connect-form-wrapper #enquiryForm {
+        min-width: 0;
+        width: 100%;
+    }
+}
+
+/* Extra-small phones */
+@media (max-width: 380px) {
+    .connect-form-wrapper {
+        padding: 16px !important;
+    }
+}
+
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
@@ -2652,19 +2680,19 @@ footer a:hover{color:#ff8a8f;transform:translateX(4px)}
                     autocomplete="email" maxlength="254" required>
             </div>
 
-            <div class="mini-field">
+            <!-- <div class="mini-field">
                 <label for="nationality">Nationality <b>*</b></label>
                 <input id="nationality" name="nationality" type="text"
                     placeholder="Your nationality"
                     maxlength="80" required>
-            </div>
+            </div> -->
 
-            <div class="mini-field">
+            <!-- <div class="mini-field">
                 <label for="country">Current Country <b>*</b></label>
                 <input id="country" name="country" type="text"
                     placeholder="Country you live in"
                     autocomplete="country-name" maxlength="80" required>
-            </div>
+            </div> -->
 
             <div class="mini-field">
                 <label for="service">Service Required <b>*</b></label>
@@ -2835,7 +2863,7 @@ footer a:hover{color:#ff8a8f;transform:translateX(4px)}
 
         <!-- GROUP 1: LOGOS 1–5 -->
         <div class="logo-slide">
-          <!-- <div class="logo-card"><img src="" alt="Partner 1"></div> -->
+          <div class="logo-card"><img src="UAE Judicial Department Emblem.png" alt="Partner 1"></div>
           <div class="logo-card"><img src="Authoritative logogs-01.png" alt="Partner 2"></div>
           <div class="logo-card"><img src="Authoritative logogs-02.png" alt="Partner 3"></div>
           <div class="logo-card"><img src="Authoritative logogs-03.png" alt="Partner 4"></div>
@@ -2892,9 +2920,9 @@ footer a:hover{color:#ff8a8f;transform:translateX(4px)}
       <div class="logo-card">
         <img src="Authoritative logogs-08.png" alt="Partner 8">
       </div>
-      <!-- <div class="logo-card">
-        <img src="United Arab Emirates Ministry of Justice.png" alt="Partner 9">
-      </div> -->
+      <div class="logo-card">
+        <img src="UAE Judicial Department Emblem.png" alt="Partner 9">
+      </div>
     </div>
 
   </div>
