@@ -1189,6 +1189,107 @@ body.menu-open #top .burger span:nth-child(3) {
   }
 }
 
+/* code for display three privacy,t&c,cooies below */
+/* FOOTER LEGAL LINKS — DESKTOP */
+@media screen and (min-width: 601px) {
+    footer .fb {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        width: 100%;
+    }
+
+    footer .fb > span {
+        display: block;
+        width: auto !important;
+        flex: 1;
+        font-size: 12px !important;
+        text-align: left !important;
+    }
+
+    footer .fb > nav[aria-label="Legal"] {
+        position: static !important;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: flex-end !important;
+        align-items: center !important;
+        width: auto !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 0 0 auto !important;
+        gap: 20px !important;
+        flex-shrink: 0;
+    }
+
+    footer .fb > nav[aria-label="Legal"] a {
+        display: inline-block !important;
+        position: static !important;
+        color: #ffffff !important;
+        font-size: 11px !important;
+        white-space: nowrap !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+}
+
+/* FOOTER LEGAL LINKS — MOBILE */
+@media screen and (max-width: 600px) {
+    footer .fb {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    footer .fb > nav[aria-label="Legal"] {
+        position: static !important;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        gap: 8px 14px !important;
+    }
+
+    footer .fb > nav[aria-label="Legal"] a {
+        display: inline-block !important;
+        position: static !important;
+        color: #ffffff !important;
+        font-size: 10px !important;
+        white-space: nowrap !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    footer .fb > span {
+        width: 100% !important;
+        text-align: center !important;
+    }
+}
+
 
 </style>
 
@@ -1214,7 +1315,7 @@ body.menu-open #top .burger span:nth-child(3) {
   <div class="wrap bar">
 
     <!-- Logo -->
-    <a class="logo" href="index.html" aria-label="abc BUSINESS SOLUTION home">
+    <a class="logo" href="#" aria-label="abc BUSINESS SOLUTION home">
       <img
         src="model3.png"
         alt="abc BUSINESS SOLUTION"
@@ -1239,9 +1340,9 @@ body.menu-open #top .burger span:nth-child(3) {
           </button>
 
           <ul class="sub">
-            <li><a href="demo.html#solutions">Free Zones</a></li>
-            <li><a href="demo.html#solutions">Mainland</a></li>
-            <li><a href="demo.html#solutions">Offshore Setup</a></li>
+            <li><a href="bdemo.html#free-zone">Free Zones</a></li>
+            <li><a href="bdemo.html#mainland">Mainland</a></li>
+            <li><a href="bdemo.html#free-zone">Offshore Setup</a></li>
           </ul>
         </li>
 
@@ -1283,17 +1384,16 @@ body.menu-open #top .burger span:nth-child(3) {
             <div class="mega-column">
               <h4 class="mega-heading">CORPORATE SERVICES</h4>
               <div class="mega-links">
-                <a href="contact.html">Banking Assistance</a>
-                <a href="contact.html">Accounting</a>
-                <a href="contact.html">VAT</a>
-                <a href="contact.html">Corporate Tax</a>
-                <a href="contact.html">Insurance</a>
-                <a href="contact.html">License Renewal</a>
-                <a href="contact.html">License Amendment</a>
-                <a href="contact.html">Business Closure</a>
+                <a href="dservice3.html#banking">Banking Assistance</a>
+                <a href="dservice3.html#accounting-tax">Accounting</a>
+                <a href="dservice3.html#vat">VAT</a>
+                <a href="dservice3.html#corporate-tax">Corporate Tax</a>
+                <a href="dservice3.html#insurance">Insurance</a>
+                <a href="dservice3.html#renewal">License Renewal</a>
+                <a href="dservice3.html#amendment">License Amendment</a>
+                <a href="dservice3.html#closure">Business Closure</a>
               </div>
             </div>
-
           </div>
         </li>
 
@@ -1404,7 +1504,7 @@ body.menu-open #top .burger span:nth-child(3) {
 <footer><div class="wrap"><div class="fg" id="fg"></div>
 
 <div class="fb">
-  <span>© <span id="yr"></span> Alphytix BUSINESS SOLUTION. All rights reserved.</span>
+  <span style="display: block; width: 100%; font-size: 10px; text-align: center;">© <span id="yr"></span> Alphytix BUSINESS SOLUTION. All rights reserved.</span>
   <nav aria-label="Legal">
     <a href="privacy-policy.html">Privacy Policy</a>
     <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
@@ -1533,7 +1633,8 @@ sec({id:"faq",alt:1,lab:"FAQ",h2:"Frequently Asked Questions",desc:"Short answer
 
 /* ===== Final CTA ===== */
 {const s=h("section","dark fin"),w=h("div","wrap");w.append(h("h2",null,"Need Help With Your UAE Business Setup?"),h("p",null,"Tell us what you need, and our team can help you understand the next steps."));
- const b=h("div","btns");b.append(h("a","btn","Talk to an Expert",{href:CONTACT}),h("a","btn o","Explore Services",{href:"#overview"}));w.append(b);s.append(w);$("#sections").append(s)}
+ const b=h("div","btns");b.append(h("a","btn","Talk to an Expert",{href:CONTACT}),
+ h("a","btn o","Explore Services",{href:"demo.html#services"}));w.append(b);s.append(w);$("#sections").append(s)}
 
 
  /* ===== Footer ===== */
@@ -1580,14 +1681,14 @@ sec({id:"faq",alt:1,lab:"FAQ",h2:"Frequently Asked Questions",desc:"Short answer
     [
       "SERVICES",
       [
-        ["Banking", "contact.html"],
-        ["Accounting", "contact.html"],
-        ["VAT", "contact.html"],
-        ["Corporate Tax", "contact.html"],
-        ["Insurance", "contact.html"],
-        ["Renewal", "contact.html"],
-        ["License Amendment", "contact.html"],
-        ["Business Closure", "contact.html"]
+        ["Banking", "dservice3.html#banking"],
+        ["Accounting", "dservice3.html#accounting-tax"],
+        ["VAT", "dservice3.html#vat"],
+        ["Corporate Tax", "dservice3.html#corporate-tax"],
+        ["Insurance", "dservice3.html#insurance"],
+        ["Renewal", "dservice3.html#renewal"],
+        ["License Amendment", "dservice3.html#amendment"],
+        ["Business Closure", "dservice3.html#closure"]
       ]
     ],
     [
@@ -1595,14 +1696,13 @@ sec({id:"faq",alt:1,lab:"FAQ",h2:"Frequently Asked Questions",desc:"Short answer
       [
         ["About", "index.html#why"],
         ["Why Alphytix", "index.html#why"],
-        ["Contact", "contact.html"]
       ]
     ],
     [
       "LET'S CONNECT",
       [
-        ["WhatsApp", "https://wa.me/971501234567"],
-        ["Call Us", "tel:+971501234567"],
+        ["WhatsApp", "https://wa.me/971501762994?text=Hello"],
+        ["Call Us", "tel:+971501762994"],
         ["Email Us", "https://mail.google.com/mail/?view=cm&fs=1&to=info@yourdomain.com"]
       ]
     ]
@@ -1615,19 +1715,21 @@ sec({id:"faq",alt:1,lab:"FAQ",h2:"Frequently Asked Questions",desc:"Short answer
     const ul = h("ul");
 
     items.forEach(([label, href]) => {
-      const li = h("li");
+  const li = h("li");
 
-      li.append(
-        h("a", null, label, {
-          href: href,
-          target: label === "WhatsApp" ? "_blank" : undefined,
-          rel: label === "WhatsApp" ? "noopener noreferrer" : undefined
-        })
-      );
+  const isExternalApp =
+    label === "WhatsApp" || label === "Email Us";
 
-      ul.append(li);
-    });
+  li.append(
+    h("a", null, label, {
+      href: href,
+      target: isExternalApp ? "_blank" : "_self",
+      rel: isExternalApp ? "noopener noreferrer" : undefined
+    })
+  );
 
+  ul.append(li);
+});
     col.append(ul);
     $("#fg").append(col);
   });
