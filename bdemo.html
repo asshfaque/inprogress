@@ -262,11 +262,12 @@ footer ul{list-style:none;padding:0;margin:0}footer li{margin:6px 0}footer a{tex
 /* ===== Shared header logo ===== */
 .site-header .site-logo {
   display: block;
-  width: 110px;
+  width: 150px;
   max-width: auto;
   height: auto;
   object-fit: contain;
 }
+
 
 /* Keep desktop navigation aligned */
 
@@ -1027,6 +1028,313 @@ footer ul{list-style:none;padding:0;margin:0}footer li{margin:6px 0}footer a{tex
     font-size: 12px !important;
   }
 }
+
+
+/* ===== Footer layout ===== */
+
+footer .fg {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 0.8fr 0.9fr;
+  gap: 24px;
+  align-items: start;
+}
+
+footer .fg > div {
+  min-width: 0;
+}
+
+footer .brand-name {
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+footer .fg h4 {
+  margin-top: 0;
+}
+
+footer .fg ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+footer .fg li {
+  margin-bottom: 9px;
+}
+
+footer .fg a {
+  overflow-wrap: anywhere;
+}
+
+/* Copyright and legal links */
+footer .fb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+footer .fb > span {
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+footer .footer-legal {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+footer .footer-legal a {
+  font-size: 12px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+  footer .fg {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px 22px;
+  }
+}
+
+/* Phone */
+@media (max-width: 600px) {
+  footer .fg {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 16px;
+  }
+
+  footer .br {
+    grid-column: 1 / -1;
+  }
+
+  footer .fb {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  footer .fb > span {
+    font-size: 10px;
+  }
+
+  footer .footer-legal {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+
+  footer .footer-legal a {
+    font-size: 9px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 350px) {
+  footer .footer-legal {
+    gap: 6px;
+  }
+
+  footer .footer-legal a {
+    font-size: 8px;
+  }
+}
+
+/* three text under copyright text */
+
+/* ===== FINAL FOOTER FIX ===== */
+
+footer .fb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+footer .fb .footer-legal {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+footer .fb .footer-legal a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Mobile footer */
+@media screen and (max-width: 600px) {
+  footer .fb {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    text-align: center !important;
+  }
+
+  footer .fb > span {
+    display: block !important;
+    width: 100% !important;
+    color: #e6e8f5 !important;
+    font-size: 10px !important;
+  }
+
+  footer .fb nav.footer-legal {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-wrap: nowrap !important;
+    gap: 12px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: static !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  footer .fb nav.footer-legal a {
+    display: inline-block !important;
+    flex: 0 0 auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    color: #ffffff !important;
+    font-size: 10px !important;
+    line-height: 1.5 !important;
+    white-space: nowrap !important;
+    background: transparent !important;
+    border: 0 !important;
+  }
+}
+
+.brand-name img {
+    width: 150px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+     margin-bottom: 10px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .brand-name img {
+        width: 125px;
+         margin-bottom: 10px;
+    }
+}
+
+/* Fix mobile width on the service page */
+@media (max-width: 768px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: clip;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    .wrap {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    img,
+    video,
+    iframe {
+        max-width: 100%;
+    }
+
+    /* Keep the comparison table inside the screen */
+    .tw {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    .tw table {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Prevent buttons from stretching beyond the screen */
+    .btns {
+        max-width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+}
+
+
+/* Icon and heading on the same row */
+.card-heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+/* Icon alignment */
+.card-heading .ic {
+    display: block;
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    margin: 0;
+}
+
+/* Heading alignment */
+.card-heading h3 {
+    margin: 0;
+    position: relative;
+    top: 2px;
+}
+
+
+/* changing color of why section */
+
+/* Change only the Why section background */
+section#why.dark {
+    background-color: #160066;
+}
+
+/* Keep card backgrounds unchanged */
+section#why.dark .card {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow: none;
+}
+
+
 </style>
 
 
@@ -1060,8 +1368,8 @@ footer ul{list-style:none;padding:0;margin:0}footer li{margin:6px 0}footer a{tex
   <div class="wrap bar">
 
     <!-- Logo -->
-    <a class="logo" href="index.html" aria-label="abc BUSINESS SOLUTION home">
-      <img src="model3.png" alt="Alphytix BUSINESS SOLUTION" class="site-logo">
+    <a class="logo" href="index.html" aria-label="Alphytix BUSINESS SOLUTION home">
+      <img src="Model 2.png" alt="Alphytix BUSINESS SOLUTION" class="site-logo">
     </a>
 
     <!-- Navigation -->
@@ -1165,23 +1473,23 @@ footer ul{list-style:none;padding:0;margin:0}footer li{margin:6px 0}footer a{tex
 </a>
         </div>
 
-        <a class="mobile-contact-link" href="tel:+971XXXXXXXXX">
+        <a class="mobile-contact-link" href="tel:+971501762994">
           <i class="fas fa-phone"></i>
-          <span>+971 XX XXX XXXX</span>
+          <span>+971 50 176 2994</span>
         </a>
 
         <a class="mobile-contact-link whatsapp-link"
-           href="https://wa.me/971XXXXXXXXX"
+           href="https://wa.me/971501762994?text=Hi, I’m interested in your UAE business services. Could you please share more details? Thank you!"
            target="_blank" rel="noopener noreferrer">
           <i class="fab fa-whatsapp"></i>
-          <span>+971 XX XXX XXXX</span>
+          <span>+971 50 176 2994</span>
         </a>
 
       </div>
     </nav>
 
     <!-- Desktop CTA -->
-    <a class="btn hcta" href="contact.html">Talk to an Expert</a>
+    <a class="btn hcta" href="cdemo.html">Talk to an Expert</a>
 
     <!-- Mobile burger -->
     <button class="burger" id="burger" type="button"
@@ -1214,7 +1522,7 @@ tabindex="-1">
 <span class="lab in">Business Setup</span>
 <h1 id="hero-h">Company Formation in the UAE Made Simple</h1>
 <p class="lead in" style="animation-delay:.5s">Choose the right structure, jurisdiction and licence for your business, with clear guidance from your first consultation to your bank account.</p>
-<div class="btns in" style="animation-delay:.7s"><a class="btn" href="#company-formation">Start Company Formation</a><a class="btn o" href="contact.html">Talk to an Expert</a></div>
+<div class="btns in" style="animation-delay:.7s"><a class="btn" href="#company-formation">Start Company Formation</a><a class="btn o" href="cdemo.html">Talk to an Expert</a></div>
 <p class="chip-lbl in" style="animation-delay:.85s">Jump to</p>
 <ul class="chips in" style="animation-delay:.9s">
 <li><a href="#company-formation">Company Formation</a></li>
@@ -1233,18 +1541,74 @@ tabindex="-1">
     <h2 id="cf-h">Company Formation in the UAE</h2>
     <p>Set up your UAE company with guidance on structure, licensing and approvals. Requirements vary by jurisdiction, business activity and legal structure.</p></div>
 
+
 <h3 class="sub3">Choose Your Structure</h3>
+
 <div class="grid g3">
-<a class="card rv" href="#mainland"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg><h3>Mainland</h3><p>Licensed by an emirate’s economic department, generally allowing you to operate across the UAE market, subject to your licensed activity.</p><span class="go">Explore Mainland</span></a>
-<a class="card rv" href="#free-zone"><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg><h3>Free Zone</h3><p>Set up within a designated zone that has its own authority, rules and approved activity list.</p><span class="go">Explore Free Zones</span></a>
-<a class="card rv" href="#offshore"><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg><h3>Offshore</h3><p>Typically used for holding assets or international structuring, with limits on operating in the local market.</p><span class="go">Explore Offshore</span></a>
+
+  <a class="card rv" href="#mainland">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true">
+        <use href="#i-pin"/>
+      </svg>
+      <h3>Mainland</h3>
+    </div>
+    <p>Licensed by an emirate’s economic department, generally allowing you to operate across the UAE market, subject to your licensed activity.</p>
+    <span class="go">Explore Mainland</span>
+  </a>
+
+  <a class="card rv" href="#free-zone">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true">
+        <use href="#i-globe"/>
+      </svg>
+      <h3>Free Zone</h3>
+    </div>
+    <p>Set up within a designated zone that has its own authority, rules and approved activity list.</p>
+    <span class="go">Explore Free Zones</span>
+  </a>
+
+  <a class="card rv" href="#offshore">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true">
+        <use href="#i-shield"/>
+      </svg>
+      <h3>Offshore</h3>
+    </div>
+    <p>Typically used for holding assets or international structuring, with limits on operating in the local market.</p>
+    <span class="go">Explore Offshore</span>
+  </a>
+
 </div>
 
+
+
 <h3 class="sub3">Other Ways to Establish a Presence</h3>
+
 <div class="grid g2">
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-building"/></svg><h3>Branch Office</h3><p>Extend an existing company into the UAE as a branch of the parent company, subject to the licensing authority’s rules and the activity you want to carry out.</p></div>
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-brief"/></svg><h3>Representative Office</h3><p>A presence typically used for promotion and liaison on behalf of a parent company. Permitted activities are limited and set by the relevant authority.</p></div>
+
+  <div class="card rv">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true">
+        <use href="#i-building"/>
+      </svg>
+      <h3>Branch Office</h3>
+    </div>
+    <p>Extend an existing company into the UAE as a branch of the parent company, subject to the licensing authority’s rules and the activity you want to carry out.</p>
+  </div>
+
+  <div class="card rv">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true">
+        <use href="#i-brief"/>
+      </svg>
+      <h3>Representative Office</h3>
+    </div>
+    <p>A presence typically used for promotion and liaison on behalf of a parent company. Permitted activities are limited and set by the relevant authority.</p>
+  </div>
+
 </div>
+
 
 <h3 class="sub3">Our Process</h3>
 <ol class="steps s5">
@@ -1260,28 +1624,89 @@ tabindex="-1">
 <li class="st rv"><span class="nm">10</span><h3>Bank Account</h3><p>Get support preparing for account opening.</p></li>
 </ol>
 <p class="note">The order of steps varies by jurisdiction and activity. Licences, visas and bank accounts depend on eligibility, authority approval and third-party requirements; none are guaranteed.</p>
-<div class="cta-row rv"><a class="btn" href="contact.html">Start Company Formation</a></div>
+<div class="cta-row rv"><a class="btn" href="cdemo.html">Start Company Formation</a></div>
 </div></section>
 
 <!-- ================= 2. MAINLAND ================= -->
 <section class="alt" id="mainland" aria-labelledby="ml-h"><div class="wrap">
 <div class="hd rv"><span class="lab">Mainland Setup</span><h2 id="ml-h">Start Your Business in the UAE Mainland</h2><p class="sh">Set up your mainland company with the right business activity, license and approvals.</p>
-<div class="btns"><a class="btn" href="contact.html">Get Mainland Quote</a><a class="btn o" href="contact.html">Talk to an Expert</a></div></div>
+<div class="btns"><a class="btn" href="cdemo.html">Get Mainland Quote</a><a class="btn o" href="cdemo.html">Talk to an Expert</a></div></div>
 
 <h3 class="sub3">Why Mainland?</h3>
 <div class="grid g3">
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg><h3>Access to UAE Market</h3><p>A mainland licence generally allows you to trade across the UAE market, subject to the licensed activity.</p></div>
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg><h3>Wide Range of Activities</h3><p>Mainland authorities license a broad range of commercial, professional and industrial activities.</p></div>
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-building"/></svg><h3>Flexible Office Options</h3><p>Office requirements depend on the activity and the authority. Options can differ by emirate.</p></div>
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-brief"/></svg><h3>Government and Private Sector Opportunities</h3><p>A mainland company may be able to work with government and private-sector clients, subject to the applicable rules.</p></div>
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg><h3>Suitable for Many Business Types</h3><p>From trading and services to manufacturing, mainland can fit many business models.</p></div>
+
+<div class="card rv">
+  <div class="card-heading">
+    <svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg>
+    <h3>Access to UAE Market</h3>
+  </div>
+  <p>A mainland licence generally allows you to trade across the UAE market, subject to the licensed activity.</p>
+</div>
+
+<div class="card rv">
+  <div class="card-heading">
+    <svg class="ic" aria-hidden="true"><use href="#i-list"/></svg>
+    <h3>Wide Range of Activities</h3>
+  </div>
+  <p>Mainland authorities license a broad range of commercial, professional and industrial activities.</p>
+</div>
+
+<div class="card rv">
+  <div class="card-heading">
+    <svg class="ic" aria-hidden="true"><use href="#i-building"/></svg>
+    <h3>Flexible Office Options</h3>
+  </div>
+  <p>Office requirements depend on the activity and the authority. Options can differ by emirate.</p>
+</div>
+
+<div class="card rv">
+  <div class="card-heading">
+    <svg class="ic" aria-hidden="true"><use href="#i-brief"/></svg>
+    <h3>Government and Private Sector Opportunities</h3>
+  </div>
+  <p>A mainland company may be able to work with government and private-sector clients, subject to the applicable rules.</p>
+</div>
+
+<div class="card rv">
+  <div class="card-heading">
+    <svg class="ic" aria-hidden="true"><use href="#i-users"/></svg>
+    <h3>Suitable for Many Business Types</h3>
+  </div>
+  <p>From trading and services to manufacturing, mainland can fit many business models.</p>
+</div>
 </div>
 
 <h3 class="sub3">Mainland License Types</h3>
+
 <div class="grid g3">
-<a class="card rv" href="#licenses"><svg class="ic" aria-hidden="true"><use href="#i-cart"/></svg><h3>Commercial</h3><p>For trading activities such as buying, selling, importing and exporting goods.</p><span class="go">Learn More</span></a>
-<a class="card rv" href="#licenses"><svg class="ic" aria-hidden="true"><use href="#i-pen"/></svg><h3>Professional</h3><p>For service activities based on professional skills, such as consultancy.</p><span class="go">Learn More</span></a>
-<a class="card rv" href="#licenses"><svg class="ic" aria-hidden="true"><use href="#i-factory"/></svg><h3>Industrial</h3><p>For manufacturing, processing and production activities.</p><span class="go">Learn More</span></a>
+
+  <a class="card rv" href="#licenses">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true"><use href="#i-cart"/></svg>
+      <h3>Commercial</h3>
+    </div>
+    <p>For trading activities such as buying, selling, importing and exporting goods.</p>
+    <span class="go">Learn More</span>
+  </a>
+
+  <a class="card rv" href="#licenses">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true"><use href="#i-pen"/></svg>
+      <h3>Professional</h3>
+    </div>
+    <p>For service activities based on professional skills, such as consultancy.</p>
+    <span class="go">Learn More</span>
+  </a>
+
+  <a class="card rv" href="#licenses">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true"><use href="#i-factory"/></svg>
+      <h3>Industrial</h3>
+    </div>
+    <p>For manufacturing, processing and production activities.</p>
+    <span class="go">Learn More</span>
+  </a>
+
 </div>
 
 <h3 class="sub3">Setup Process</h3>
@@ -1295,25 +1720,55 @@ tabindex="-1">
 <li class="st rv"><span class="nm">07</span><h3>Bank Account</h3><p>Prepare for business bank account opening.</p></li>
 </ol>
 <p class="note">Requirements vary by emirate, business activity and legal structure. Approvals are not guaranteed.</p>
-<div class="cta-row rv"><a class="btn" href="contact.html">Start Mainland Setup</a></div>
+<div class="cta-row rv"><a class="btn" href="cdemo.html">Start Mainland Setup</a></div>
 </div></section>
 
-<!-- ================= 3. FREE ZONE ================= -->
-<section id="free-zone" aria-labelledby="fz-h"><div class="wrap">
-<div class="hd rv"><span class="lab">Free Zone Setup</span><h2 id="fz-h">Free Zone Business Setup</h2><p>Free zones are designated areas with their own authority, rules and licensing. Choosing the right one depends on your activity, budget and plans.</p></div>
+<!-- ================= 3. FREE ZONE =================#C1272D -->
+<section style="background: linear-gradient(rgb(10, 10, 131),rgb(1, 3, 49));" id="free-zone" aria-labelledby="fz-h"><div class="wrap">
+<div class="hd rv"><span class="lab" style="color: white;">Free Zone Setup</span><h2 id="fz-h" style="color: white;">Free Zone Business Setup</h2><p style="color: white;">Free zones are designated areas with their own authority, rules and licensing. Choosing the right one depends on your activity, budget and plans.</p></div>
 
-<h3 class="sub3">Why Choose a Free Zone?</h3>
+<h3 class="sub3" style="color: white;">Why Choose a Free Zone?</h3>
+
 <div class="grid g4">
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg><h3>Zone-Based Licensing</h3><p>Each zone licenses companies under its own regulations and activity list.</p></div>
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg><h3>Setup Packages</h3><p>Many zones offer packages that combine a licence with office and visa options.</p></div>
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-building"/></svg><h3>Industry Focus</h3><p>Zones are often built around industries such as logistics, media, finance or technology.</p></div>
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><h3>Defined Rules</h3><p>Ownership, tax and customs treatment depend on the zone and your activity, so verify before you decide.</p></div>
+
+  <div class="card rv">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg>
+      <h3>Zone-Based Licensing</h3>
+    </div>
+    <p>Each zone licenses companies under its own regulations and activity list.</p>
+  </div>
+
+  <div class="card rv">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true"><use href="#i-list"/></svg>
+      <h3>Setup Packages</h3>
+    </div>
+    <p>Many zones offer packages that combine a licence with office and visa options.</p>
+  </div>
+
+  <div class="card rv">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true"><use href="#i-building"/></svg>
+      <h3>Industry Focus</h3>
+    </div>
+    <p>Zones are often built around industries such as logistics, media, finance or technology.</p>
+  </div>
+
+  <div class="card rv">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>
+      <h3>Defined Rules</h3>
+    </div>
+    <p>Ownership, tax and customs treatment depend on the zone and your activity, so verify before you decide.</p>
+  </div>
+
 </div>
 
-<h3 class="sub3">Popular UAE Free Zones</h3>
+<h3 style="color: white;" class="sub3">Popular UAE Free Zones</h3>
 <!-- TODO: keep only the free zones abc BUSINESS SOLUTION actually provides services for, and delete the rest. -->
 
-<h4 class="emirate">Dubai</h4>
+<h4 class="emirate" style="color: white;">Dubai</h4>
 <div class="grid g3">
 <div class="card rv"><h3>DMCC</h3><p>Dubai Multi Commodities Centre: commodities, trading and related services.</p></div>
 <div class="card rv"><h3>Meydan Free Zone</h3><p>Services, consulting and trading activities.</p></div>
@@ -1322,47 +1777,104 @@ tabindex="-1">
 <div class="card rv"><h3>JAFZA</h3><p>Jebel Ali Free Zone: logistics, trade and industrial operations.</p></div>
 </div>
 
-<h4 class="emirate">Abu Dhabi</h4>
+<h4 class="emirate" style="color: white;">Abu Dhabi</h4>
 <div class="grid g3">
 <div class="card rv"><h3>ADGM</h3><p>Abu Dhabi Global Market: an international financial centre.</p></div>
 <div class="card rv"><h3>Masdar City</h3><p>Sustainability, clean technology and innovation.</p></div>
 <div class="card rv"><h3>KEZAD</h3><p>Industrial, logistics and trading operations.</p></div>
 </div>
 
-<h4 class="emirate">Sharjah</h4>
+<h4 class="emirate" style="color: white;">Sharjah</h4>
 <div class="grid g3">
 <div class="card rv"><h3>SPC Free Zone</h3><p>Sharjah Publishing City: publishing, media, creative and e-commerce.</p></div>
 <div class="card rv"><h3>SAIF Zone</h3><p>Sharjah Airport International Free Zone: trading and service businesses.</p></div>
 <div class="card rv"><h3>Hamriyah Free Zone</h3><p>Industrial, manufacturing and trading activities.</p></div>
 </div>
 
+<h4 class="emirate" style="color: white;">Ajman</h4>
+
 <div class="grid g3">
-<div>
-<h4 class="emirate">Ajman</h4>
-<div class="card rv"><h3>Ajman Free Zone</h3><p>Trading, service and small-business activities.</p></div>
-</div>
-<div>
-<h4 class="emirate">Ras Al Khaimah</h4>
-<div class="card rv"><h3>RAKEZ</h3><p>Ras Al Khaimah Economic Zone: industrial, trading and service licences.</p></div>
-</div>
+    <div class="card rv">
+        <h3>Ajman Free Zone</h3>
+        <p>Trading, service and small-business activities.</p>
+    </div>
+
+    <div class="card rv">
+        <h3>Ajman Nu Venture Freezone</h3>
+        <p>Business setup services for eligible business activities.</p>
+    </div>
 </div>
 
-<p class="note">Descriptions are general. Verify current activities, fees and eligibility with each authority. Alphytix BUSINESS SOLUTION is not affiliated with these free zones unless stated.</p>
-<div class="cta-row rv"><a class="btn" href="contact.html">????</a></div>
+<h4 class="emirate" style="color: white;">Ras Al Khaimah</h4>
+
+<div class="grid g3">
+    <div class="card rv">
+        <h3>RAKEZ</h3>
+        <p>Ras Al Khaimah Economic Zone: industrial, trading and service licences.</p>
+    </div>
+
+    <div class="card rv">
+        <h3>RAK Innovation</h3>
+        <p>Business setup and licensing solutions for eligible business activities in Ras Al Khaimah.</p>
+    </div>
+</div>
+
+
+<p class="note" style="color: white;">Descriptions are general. Verify current activities, fees and eligibility with each authority. Alphytix BUSINESS SOLUTION is not affiliated with these free zones unless stated.</p>
+<div class="cta-row rv"><a class="btn" href="cdemo.html">Get  Free Zone Quote</a></div>
 </div></section>
 
 <!-- ================= 4. OFFSHORE ================= -->
 <section class="alt" id="offshore" aria-labelledby="of-h"><div class="wrap">
 <div class="hd rv"><span class="lab">Offshore Setup</span><h2 id="of-h">Offshore Company Formation</h2><p>Understand what an offshore company is, who it may suit and what it cannot do, before you decide.</p></div>
 
-<div class="grid g2">
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg><h3>What Is an Offshore Company?</h3><p>An offshore company is registered in the UAE to hold assets, shares or investments, or to do business outside the UAE. It is generally not licensed to trade directly in the UAE market. Rules depend on the registering authority.</p></div>
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg><h3>Who Should Consider It?</h3>
-<ul class="chk"><li>Investors holding shares, property or other assets</li><li>Owners structuring international holdings</li><li>Businesses operating mainly outside the UAE</li></ul></div>
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><h3>Benefits</h3>
-<ul class="chk"><li>Flexible structure for holding and international activity</li><li>Possible ownership confidentiality, subject to law and compliance rules</li><li>Simpler setup than some operating structures</li></ul></div>
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg><h3>Limitations</h3>
-<ul class="chk"><li>Typically restricted from trading inside the UAE</li><li>An offshore company alone does not usually provide UAE residency</li><li>Ongoing compliance, substance and reporting rules may apply</li></ul></div>
+
+<div class="grid g4">
+
+  <div class="card rv">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg>
+      <h3>What Is an Offshore Company?</h3>
+    </div>
+    <p>An offshore company is registered in the UAE to hold assets, shares or investments, or to do business outside the UAE. It is generally not licensed to trade directly in the UAE market. Rules depend on the registering authority.</p>
+  </div>
+
+  <div class="card rv">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true"><use href="#i-users"/></svg>
+      <h3>Who Should Consider It?</h3>
+    </div>
+    <ul class="chk">
+      <li>Investors holding shares, property or other assets</li>
+      <li>Owners structuring international holdings</li>
+      <li>Businesses operating mainly outside the UAE</li>
+    </ul>
+  </div>
+
+  <div class="card rv">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>
+      <h3>Benefits</h3>
+    </div>
+    <ul class="chk">
+      <li>Flexible structure for holding and international activity</li>
+      <li>Possible ownership confidentiality, subject to law and compliance rules</li>
+      <li>Simpler setup than some operating structures</li>
+    </ul>
+  </div>
+
+  <div class="card rv">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true"><use href="#i-list"/></svg>
+      <h3>Limitations</h3>
+    </div>
+    <ul class="chk">
+      <li>Typically restricted from trading inside the UAE</li>
+      <li>An offshore company alone does not usually provide UAE residency</li>
+      <li>Ongoing compliance, substance and reporting rules may apply</li>
+    </ul>
+  </div>
+
 </div>
 <p class="callout rv">Tax treatment depends on your residency, activities, ownership and the laws that apply to you. An offshore structure is not automatically tax-free, and we do not promise tax outcomes. Take professional tax advice.</p>
 
@@ -1384,31 +1896,122 @@ tabindex="-1">
 <li class="st rv"><span class="nm">5</span><h3>Certificates</h3><p>Receive the incorporation documents.</p></li>
 </ol>
 
+
 <div class="grid g2" style="margin-top:36px">
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg><h3>Costs</h3><p>No prices are published here. Total cost depends on the jurisdiction and structure. Typical components include:</p><ul class="chk"><li>Registration and government fees</li><li>Registered office or agent fees</li><li>Annual renewal</li><li>Optional support services</li></ul></div>
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-bank"/></svg><h3>Banking</h3><p>Opening a bank account is decided by the bank after its own due diligence. We help you prepare the documents and understand likely requirements, but we cannot guarantee that an account will be opened.</p></div>
+
+  <div class="card rv">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg>
+      <h3>Costs</h3>
+    </div>
+    <p>No prices are published here. Total cost depends on the jurisdiction and structure. Typical components include:</p>
+    <ul class="chk">
+      <li>Registration and government fees</li>
+      <li>Registered office or agent fees</li>
+      <li>Annual renewal</li>
+      <li>Optional support services</li>
+    </ul>
+  </div>
+
+  <div class="card rv">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true"><use href="#i-bank"/></svg>
+      <h3>Banking</h3>
+    </div>
+    <p>Opening a bank account is decided by the bank after its own due diligence. We help you prepare the documents and understand likely requirements, but we cannot guarantee that an account will be opened.</p>
+  </div>
+
 </div>
 
-<h3 class="sub3">Offshore FAQs</h3>
+
+<!-- <h3 class="sub3">Offshore FAQs</h3>
 <div class="faq">
 <details><summary>Can an offshore company trade in the UAE?</summary><p>Generally not. Offshore companies are typically restricted from trading directly in the local market. A mainland or free zone licence may suit local activity better.</p></details>
 <details><summary>Can an offshore company get a UAE residence visa?</summary><p>An offshore company alone does not usually provide UAE residence. Visa options depend on other factors, such as an operating licence, property or other routes, and on the authority.</p></details>
 <details><summary>Is an offshore company tax-free?</summary><p>Not automatically. Tax treatment depends on where the owners are resident, what the company does and the laws that apply. Please take advice from a qualified tax professional.</p></details>
-</div>
-<div class="cta-row rv"><a class="btn" href="contact.html">Discuss Offshore Setup</a></div>
+</div> -->
+<div class="cta-row rv"><a class="btn" href="cdemo.html">Discuss Offshore Setup</a></div>
 </div></section>
 
 <!-- ================= 5. BUSINESS LICENSES ================= -->
 <section id="licenses" aria-labelledby="bl-h"><div class="wrap">
 <div class="hd rv"><span class="lab">Business Licensing</span><h2 id="bl-h">Business Licenses in the UAE</h2><p>The licence you need depends on what your business does and where it is based. Here is an overview of the main types.</p></div>
 
+
 <div class="grid g3">
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-cart"/></svg><h3>Commercial License</h3><div class="dl"><p><b>What is it?</b> A licence for trading in goods.</p><p><b>Who needs it?</b> Traders, importers, exporters and retailers.</p><p><b>Typical activities:</b> buying, selling, distribution and trading of permitted goods.</p></div></div>
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-pen"/></svg><h3>Professional License</h3><div class="dl"><p><b>What is it?</b> A licence for service activities based on professional skill.</p><p><b>Who needs it?</b> Consultants and other professionals.</p><p><b>Typical activities:</b> consultancy, design, advisory and other professional services.</p></div></div>
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-factory"/></svg><h3>Industrial License</h3><div class="dl"><p><b>What is it?</b> A licence for production and manufacturing.</p><p><b>Who needs it?</b> Factories, workshops and processing businesses.</p><p><b>Typical activities:</b> manufacturing and processing. Extra approvals often apply.</p></div></div>
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg><h3>General Trading License</h3><div class="dl"><p><b>What is it?</b> A trading licence covering several product categories.</p><p><b>Who needs it?</b> Businesses trading in a mix of goods.</p><p><b>Typical activities:</b> trading in the product lists the authority allows.</p></div></div>
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-gear"/></svg><h3>E-commerce License</h3><div class="dl"><p><b>What is it?</b> A licence for selling products online.</p><p><b>Who needs it?</b> Online stores and marketplace sellers.</p><p><b>Typical activities:</b> online retail. Some goods need additional approvals.</p></div></div>
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-brief"/></svg><h3>Service License</h3><div class="dl"><p><b>What is it?</b> A licence for business service activities.</p><p><b>Who needs it?</b> Agencies, IT, marketing and support businesses.</p><p><b>Typical activities:</b> service activities on the authority’s approved list.</p></div></div>
+
+  <div class="card rv">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true"><use href="#i-cart"/></svg>
+      <h3>Commercial License</h3>
+    </div>
+    <div class="dl">
+      <p><b>What is it?</b> A licence for trading in goods.</p>
+      <p><b>Who needs it?</b> Traders, importers, exporters and retailers.</p>
+      <p><b>Typical activities:</b> buying, selling, distribution and trading of permitted goods.</p>
+    </div>
+  </div>
+
+  <div class="card rv">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true"><use href="#i-pen"/></svg>
+      <h3>Professional License</h3>
+    </div>
+    <div class="dl">
+      <p><b>What is it?</b> A licence for service activities based on professional skill.</p>
+      <p><b>Who needs it?</b> Consultants and other professionals.</p>
+      <p><b>Typical activities:</b> consultancy, design, advisory and other professional services.</p>
+    </div>
+  </div>
+
+  <div class="card rv">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true"><use href="#i-factory"/></svg>
+      <h3>Industrial License</h3>
+    </div>
+    <div class="dl">
+      <p><b>What is it?</b> A licence for production and manufacturing.</p>
+      <p><b>Who needs it?</b> Factories, workshops and processing businesses.</p>
+      <p><b>Typical activities:</b> manufacturing and processing. Extra approvals often apply.</p>
+    </div>
+  </div>
+
+  <div class="card rv">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg>
+      <h3>General Trading License</h3>
+    </div>
+    <div class="dl">
+      <p><b>What is it?</b> A trading licence covering several product categories.</p>
+      <p><b>Who needs it?</b> Businesses trading in a mix of goods.</p>
+      <p><b>Typical activities:</b> trading in the product lists the authority allows.</p>
+    </div>
+  </div>
+
+  <div class="card rv">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true"><use href="#i-gear"/></svg>
+      <h3>E-commerce License</h3>
+    </div>
+    <div class="dl">
+      <p><b>What is it?</b> A licence for selling products online.</p>
+      <p><b>Who needs it?</b> Online stores and marketplace sellers.</p>
+      <p><b>Typical activities:</b> online retail. Some goods need additional approvals.</p>
+    </div>
+  </div>
+
+  <div class="card rv">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true"><use href="#i-brief"/></svg>
+      <h3>Service License</h3>
+    </div>
+    <div class="dl">
+      <p><b>What is it?</b> A licence for business service activities.</p>
+      <p><b>Who needs it?</b> Agencies, IT, marketing and support businesses.</p>
+      <p><b>Typical activities:</b> service activities on the authority’s approved list.</p>
+    </div>
+  </div>
+
 </div>
 
 <h3 class="sub3">Documents Required (indicative)</h3>
@@ -1420,10 +2023,33 @@ tabindex="-1">
 <li>External approvals for regulated activities, where applicable</li>
 </ul></div>
 
+
 <div class="grid g3" style="margin-top:18px">
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg><h3>Cost</h3><p>No prices are published here. Cost depends on the authority, activity, office and visa needs. We prepare a tailored quotation.</p></div>
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-refresh"/></svg><h3>Process</h3><p>Choose activity, reserve a name, get initial approval, submit documents and receive the licence.</p></div>
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><h3>Timeline</h3><p>Timing depends on the authority, activity and any third-party approvals. We give an estimate after reviewing your case.</p></div>
+
+  <div class="card rv">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg>
+      <h3>Cost</h3>
+    </div>
+    <p>No prices are published here. Cost depends on the authority, activity, office and visa needs. We prepare a tailored quotation.</p>
+  </div>
+
+  <div class="card rv">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true"><use href="#i-refresh"/></svg>
+      <h3>Process</h3>
+    </div>
+    <p>Choose activity, reserve a name, get initial approval, submit documents and receive the licence.</p>
+  </div>
+
+  <div class="card rv">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>
+      <h3>Timeline</h3>
+    </div>
+    <p>Timing depends on the authority, activity and any third-party approvals. We give an estimate after reviewing your case.</p>
+  </div>
+
 </div>
 
 <h3 class="sub3">Mainland vs Free Zone</h3>
@@ -1439,28 +2065,59 @@ tabindex="-1">
 </tbody></table></div>
 <p class="note">General considerations only. Rules vary by authority and activity.</p>
 
-<h3 class="sub3">Licence FAQs</h3>
+<!-- <h3 class="sub3">Licence FAQs</h3>
 <div class="faq">
 <details><summary>Which licence do I need for my business?</summary><p>It depends on your activity. Trading, professional services and manufacturing each fall under different licence types. Tell us what your business does and we will help you identify the right one.</p></details>
 <details><summary>Can I have more than one activity on a licence?</summary><p>Often yes, but the combinations allowed depend on the authority and the activities chosen.</p></details>
 <details><summary>Do I need extra approvals?</summary><p>Some activities, such as food, health, education and manufacturing, need approval from additional authorities before a licence is issued.</p></details>
-</div>
-<div class="cta-row rv"><a class="btn" href="contact.html">Get License Quote</a></div>
+</div> -->
+<div class="cta-row rv"><a class="btn" href="cdemo.html">Get License Quote</a></div>
 </div></section>
 
 <!-- ================= WHY CHOOSE US ================= -->
-<section class="dark" id="why" aria-labelledby="why-h"><div class="wrap">
-<div class="hd rv"><span class="lab" style="color:#ff8a8f">Why Alphytix</span><h2 id="why-h">Why Choose Us?</h2></div>
+<!-- <section class="dark" id="why" aria-labelledby="why-h"><div class="wrap">
+<div class="hd rv"><span class="lab" style="color:white">Why Alphytix</span><h2 id="why-h">Why Choose Us?</h2></div>
+
 <div class="grid g4">
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg><h3>Guidance Through Each Step</h3><p>You know what comes next at every stage.</p></div>
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg><h3>Organised Documentation Support</h3><p>Paperwork is prepared and checked before submission.</p></div>
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-building"/></svg><h3>Solutions Based on Your Business Needs</h3><p>Options matched to your activity and goals.</p></div>
-<div class="card rv"><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg><h3>Clear Communication</h3><p>Plain explanations of options, requirements and next steps.</p></div>
+
+  <div class="card rv">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true"><use href="#i-users"/></svg>
+      <h3>Guidance Through Each Step</h3>
+    </div>
+    <p>You know what comes next at every stage.</p>
+  </div>
+
+  <div class="card rv">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg>
+      <h3>Organised Documentation Support</h3>
+    </div>
+    <p>Paperwork is prepared and checked before submission.</p>
+  </div>
+
+  <div class="card rv">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true"><use href="#i-building"/></svg>
+      <h3>Solutions Based on Your Business Needs</h3>
+    </div>
+    <p>Options matched to your activity and goals.</p>
+  </div>
+
+  <div class="card rv">
+    <div class="card-heading">
+      <svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg>
+      <h3>Clear Communication</h3>
+    </div>
+    <p>Plain explanations of options, requirements and next steps.</p>
+  </div>
+
 </div>
-</div></section>
+
+</div></section> -->
 
 <!-- ================= FAQ ================= -->
-<section class="alt" id="faq" aria-labelledby="faq-h"><div class="wrap">
+<!-- <section class="alt" id="faq" aria-labelledby="faq-h"><div class="wrap">
 <div class="hd rv"><span class="lab">FAQ</span><h2 id="faq-h">Frequently Asked Questions</h2><p>Short answers to common questions. Details depend on your situation and the relevant authority.</p></div>
 <div class="faq rv">
 <details><summary>Which UAE business setup option is suitable for me?</summary><p>It depends on your activity, where your customers are, your budget and your visa needs. Mainland, free zone and offshore each suit different goals. Share your plans and we can help you compare the options.</p></details>
@@ -1469,31 +2126,93 @@ tabindex="-1">
 <details><summary>Can you guarantee approval or a processing time?</summary><p>No. Decisions and timelines belong to the relevant authority. We help you prepare and follow the correct procedure.</p></details>
 <details><summary>How do I request a consultation?</summary><p>Use the Talk to an Expert button to open our contact form, tell us what you need, and our team will respond with the next steps.</p></details>
 </div>
-</div></section>
+</div></section> -->
 
 <!-- ================= FINAL CTA ================= -->
 <section class="dark fin"><div class="wrap">
 <h2>Need Help With Your UAE Business Setup?</h2>
 <p>Contact us to discuss your requirements and understand the next steps.</p>
-<div class="btns"><a class="btn" href="contact.html">Talk to an Expert</a><a class="btn o" href="#company-formation">Explore Setup Options</a></div>
+<div class="btns"><a class="btn" href="cdemo.html">Talk to an Expert</a><a class="btn o" href="#company-formation">Explore Setup Options</a></div>
 </div></section>
 
 </main>
 
-<footer><div class="wrap">
-<div class="fg">
-<div class="br"><div style="font-weight:800;font-size:1.2rem;color:#fff">Alphytix BUSINESS SOLUTION</div><p>Business setup and corporate support for entrepreneurs and companies exploring opportunities in the UAE.</p></div>
-<div><h4>Business Setup</h4><ul><li><a href="#company-formation">Company Formation</a></li>
-    <li><a href="#mainland">Mainland Setup</a></li>
-    <li><a href="#free-zone">Free Zone Setup</a></li>
-    <li><a href="#offshore">Offshore Setup</a></li>
-    <li><a href="#licenses">Business Licensing</a></li>
-</ul></div>
-<div><h4>More Services</h4><ul><li><a href="services.html#golden-visa">Golden Visa</a></li><li><a href="services.html#emirates-id">Emirates ID</a></li><li><a href="services.html#pro-services">PRO Services</a></li></ul></div>
-<div><h4>Company</h4><ul><li><a href="index.html">Home</a></li><li><a href="index.html#why">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-</div>
-<div class="fb">&copy; <span id="yr"></span> Alphytix BUSINESS SOLUTION. All rights reserved.</div>
-</div></footer>
+<footer>
+  <div class="wrap">
+
+    <div class="fg">
+
+      <div class="br">
+        <div class="brand-name"><img src="white model2.png"></div>
+        <p style="font-size: 13px;">Business setup and corporate support for entrepreneurs and companies exploring opportunities in the UAE.</p>
+      </div>
+
+      <div>
+        <h4>BUSINESS SETUP</h4>
+        <ul>
+          <li><a href="#banking">Company Formation</a></li>
+          <li><a href="#accounting-tax">Mainland</a></li>
+          <li><a href="#insurance">Free Zone</a></li>
+          <li><a href="#renewal">Offshore</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>VISA SERVICES</h4>
+        <ul>
+          <li><a href="services.html#golden-visa">Golden Visa</a></li>
+          <li><a href="services.html#emirates-id">Emirates ID</a></li>
+          <li><a href="services.html#pro-services">Other PRO Services</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>SERVICES</h4>
+        <ul>
+          <li><a href="#banking">Banking</a></li>
+          <li><a href="#accounting-tax">Accounting</a></li>
+          <li><a href="#accounting-tax">VAT</a></li>
+          <li><a href="#accounting-tax">Corporate Tax</a></li>
+          <li><a href="#insurance">Insurance</a></li>
+          <li><a href="#renewal">Renewal</a></li>
+          <li><a href="#amendment">License Amendment</a></li>
+          <li><a href="#closure">Business Closure</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>COMPANY</h4>
+        <ul>
+          <li><a href="index.html#why">About</a></li>
+          <li><a href="contact.html">Why Alphytix</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>LET'S CONNECT</h4>
+        <ul>
+          <li><a href="https://wa.me/971501762994?text=Hi, I’m interested in your UAE business services. Could you please share more details? Thank you!">WhatsApp</a></li>
+          <li><a href="tel:+971501762994">Call Us</a></li>
+          <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=alphytixbusinesssolution@gmail.com">Email Us</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="fb">
+      <span>
+        &copy; <span id="yr"></span> Alphytix BUSINESS SOLUTION. All rights reserved.
+      </span>
+
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+        <!-- <a href="cookie-policy.html">Cookie Policy</a> -->
+      </nav>
+    </div>
+
+  </div>
+</footer>
 
 <script>
 "use strict";
