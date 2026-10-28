@@ -11,7 +11,7 @@
 <meta property="og:title" content="Contact Us | abc BUSINESS SOLUTION">
 <meta property="og:description" content="Tell us what you need and get a free consultation for your UAE business.">
 <meta property="og:url" content="https://www.example.com/contact.html">
-<link rel="icon" type="image/png" href="Al.png">
+<link rel="icon" type="image/png" href="Alpha.png">
 <style>
 :root{--n:#030B5B;--r:#C1272D;--g:#F5F7FB;--b:#E1E5F0;--t:#2b3157;--ff:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
 *{box-sizing:border-box}
@@ -39,7 +39,13 @@ section{padding:68px 0}
 header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--b)}
 .bar{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
 .logo{text-decoration:none;display:flex;align-items:center}
-.site-logo{display:block;width:110px;height:auto;object-fit:contain}
+.site-logo{display:block;width:150px;height:auto;object-fit:contain}
+@media (max-width: 768px) {
+    .site-logo {
+        width: 110px;
+        height: auto;
+    }
+}
 #nav ul{list-style:none;margin:0;padding:0}
 .top{display:flex;align-items:center;justify-content:center;white-space:nowrap}
 .top>li{position:relative}
@@ -93,9 +99,27 @@ header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid 
 }
 
 /* ===== page hero ===== */
-.hero{position:relative;isolation:isolate;overflow:hidden;background:var(--n);color:#fff;padding:84px 0 92px}
+
+/* Contact page hero background */
+.hero {
+    background:
+        linear-gradient(
+            rgba(3, 11, 91, 0.78),
+            rgba(3, 11, 91, 0.78)
+        ),
+        url("https://images.pexels.com/photos/8867213/pexels-photo-8867213.jpeg") center / cover no-repeat;
+
+    color: #ffffff;
+    padding: 90px 0;
+}
+
+.hero h1,
+.hero .lead,
+.hero .lab {
+    color: #ffffff;
+}
+
 .hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(135deg,rgba(3,11,91,.92),rgba(3,11,91,.7)),url("service-poster.jpg") center/cover}
-.hero h1{color:#fff}
 .hero .lab{color:#ff8a8f}
 .hero .lab:before{content:"";display:inline-block;width:36px;height:2px;background:#ff8a8f;vertical-align:middle;margin-right:10px}
 .hero p.lead{font-size:1.1rem;max-width:580px;color:#eef0fb;margin:0}
@@ -147,7 +171,7 @@ footer a:hover{color:#ff8a8f}
 .fg{display:grid;gap:24px 16px;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
 .fg>div{min-width:0}.fg .br{grid-column:1/-1}
 .fg .br p{font-size:13px;color:#cfd3ec}
-.brand-name img{width:120px;max-width:100%;height:auto;display:block;object-fit:contain;margin-bottom:10px}
+.brand-name img{width:150px;max-width:100%;height:auto;display:block;object-fit:contain;margin-bottom:10px}
 @media(min-width:700px){.fg{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 22px}}
 @media(min-width:1101px){.fg{grid-template-columns:1.5fr 1fr 1fr 1fr .8fr .9fr;gap:24px}.fg .br{grid-column:auto}}
 .fb{display:flex;align-items:center;justify-content:space-between;gap:16px 20px;flex-wrap:wrap;margin-top:32px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2)}
@@ -184,6 +208,9 @@ footer a:hover{color:#ff8a8f}
         overflow-wrap: break-word;
     }
 }
+
+
+
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
@@ -193,7 +220,7 @@ footer a:hover{color:#ff8a8f}
 <header id="top" class="site-header">
   <div class="wrap bar">
     <a class="logo" href="index.html" aria-label="abc BUSINESS SOLUTION home">
-      <img src="model3.png" alt="abc BUSINESS SOLUTION" class="site-logo">
+      <img src="Model 2.png" alt="abc BUSINESS SOLUTION" class="site-logo">
     </a>
 
     <nav id="nav" aria-label="Main navigation">
@@ -203,11 +230,9 @@ footer a:hover{color:#ff8a8f}
         <li class="dd dropdown">
           <button type="button" class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">BUSINESS SETUP <span class="arrow">▾</span></button>
           <ul class="sub dropdown-menu">
-            <li><a href="business-setup.html#company-formation">Company Formation</a></li>
-            <li><a href="business-setup.html#mainland">Mainland Setup</a></li>
-            <li><a href="business-setup.html#free-zone">Free Zone Setup</a></li>
+            <li><a href="business-setup.html#free-zone">Free Zones</a></li>
+              <li><a href="business-setup.html#mainland">Mainland</a></li>
             <li><a href="business-setup.html#offshore">Offshore Setup</a></li>
-            <li><a href="business-setup.html#licenses">Business Licensing</a></li>
           </ul>
         </li>
 
@@ -254,12 +279,12 @@ footer a:hover{color:#ff8a8f}
           <a href="YOUR_TIKTOK_URL" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
           <a href="YOUR_YOUTUBE_URL" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
         </div>
-        <a class="mobile-contact-link" href="tel:+971XXXXXXXXX"><i class="fas fa-phone"></i><span>+971 XX XXX XXXX</span></a>
-        <a class="mobile-contact-link whatsapp-link" href="https://wa.me/971XXXXXXXXX" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i><span>+971 XX XXX XXXX</span></a>
+        <a class="mobile-contact-link" href="tel:+971501762994" target="_blank" rel="noopener noreferrer"><i class="fas fa-phone"></i><span>+971 50 176 2994</span></a>
+        <a class="mobile-contact-link whatsapp-link" href="https://wa.me/971501762994?text=Hi, I’m interested in your UAE business services. Could you please share more details? Thank you!" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i><span>+971 50 176 2994</span></a>
       </div>
     </nav>
 
-    <a class="btn hcta" href="contact.html">Talk to an Expert</a>
+    <a class="btn hcta" href="cdemo.html">Talk to an Expert</a>
 
     <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
       <span></span><span></span><span></span>
@@ -270,7 +295,7 @@ footer a:hover{color:#ff8a8f}
 <main>
 
 <section class="hero" aria-labelledby="hero-h"><div class="wrap">
-  <p class="crumbs"><a href="index.html">Home</a> / Contact</p>
+  <!-- <p class="crumbs"><a href="index.html">Home</a> / Contact</p> -->
   <span class="lab">Contact</span>
   <h1 id="hero-h">Let’s Talk About Your UAE Business</h1>
   <p class="lead">Tell us what you need and our team will reply with clear next steps.</p>
@@ -332,22 +357,22 @@ footer a:hover{color:#ff8a8f}
 
   <aside aria-label="Other ways to reach us">
     <div class="info">
-      <a class="ic-card wa" href="https://wa.me/971XXXXXXXXX" target="_blank" rel="noopener noreferrer">
+      <a class="ic-card wa" href="https://wa.me/971501762994?text=Hi, I’m interested in your UAE business services. Could you please share more details? Thank you!" target="_blank" rel="noopener noreferrer">
         <span class="ico"><i class="fab fa-whatsapp"></i></span>
-        <div><h3>WhatsApp Us</h3><span>+971 XX XXX XXXX</span></div>
+        <div><h3>WhatsApp Us</h3><span>+971 50 176 2994</span></div>
       </a>
-      <a class="ic-card" href="tel:+971XXXXXXXXX">
+      <a class="ic-card" href="tel:+971501762994" target="_blank" rel="noopener noreferrer">
         <span class="ico"><i class="fas fa-phone"></i></span>
-        <div><h3>Call Us</h3><span>+971 XX XXX XXXX</span></div>
-      </a>
-      <a class="ic-card" href="mailto:info@example.com">
+        <div><h3>Call Us</h3><span>+971 50 176 2994</span></div>
+      </a> 
+      <a class="ic-card" href="https://mail.google.com/mail/?view=cm&fs=1&to=alphytixbusinesssolution@gmail.com" target="_blank" rel="noopener noreferrer">
         <span class="ico"><i class="fas fa-envelope"></i></span>
-        <div><h3>Email Us</h3><span>info@example.com</span></div>
+        <div><h3>Email Us</h3><span style="font-size: 14px;">alphytixbusinesssolution@gmail.com</span></div>
       </a>
-      <a class="ic-card loc" href="https://maps.google.com/?q=YOUR_OFFICE_ADDRESS" target="_blank" rel="noopener noreferrer">
+      <!-- <a class="ic-card loc" href="https://maps.google.com/?q=YOUR_OFFICE_ADDRESS" target="_blank" rel="noopener noreferrer">
         <span class="ico"><i class="fas fa-location-dot"></i></span>
         <div><h3>Location</h3><span>Office No. XXX, Building Name,<br>Street / Area, City, United Arab Emirates<br><b style="color:var(--r)">Get directions</b></span></div>
-      </a>
+      </a> -->
     </div>
     <p class="reply">Prefer to chat? WhatsApp is usually the quickest way to reach us.</p>
   </aside>
@@ -403,9 +428,9 @@ footer a:hover{color:#ff8a8f}
       <div>
         <h4>LET'S CONNECT</h4>
         <ul>
-          <li><a href="https://wa.me/971XXXXXXXXX">WhatsApp</a></li>
-          <li><a href="tel:+971000000000">Call Us</a></li>
-          <li><a href="mailto:info@example.com">Email Us</a></li>
+          <li><a href="https://wa.me/971501762994?text=Hi, I’m interested in your UAE business services. Could you please share more details? Thank you!" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+          <li><a href="tel:+971501762994">Call Us</a></li>
+          <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=alphytixbusinesssolution@gmail.com" target="_blank" rel="noopener noreferrer">Email Us</a></li>
         </ul>
       </div>
     </div>
@@ -415,7 +440,7 @@ footer a:hover{color:#ff8a8f}
       <nav class="footer-legal" aria-label="Legal">
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
-        <a href="cookie-policy.html">Cookie Policy</a>
+        <!-- <a href="cookie-policy.html">Cookie Policy</a> -->
       </nav>
     </div>
   </div>
