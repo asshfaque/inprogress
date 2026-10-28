@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>UAE Golden Visa, Emirates ID &amp; PRO Services | Alphytix BUSINESS SOLUTION</title>
-<meta name="description" content="Golden Visa assistance, Emirates ID support and PRO services in the UAE. Clear guidance on documents, procedures and next steps from abc BUSINESS SOLUTION.">
+<meta name="description" content="Golden Visa assistance, Emirates ID support and PRO services in the UAE. Clear guidance on documents, procedures and next steps from Alphytix BUSINESS SOLUTION.">
 <link rel="canonical" href="https://www.example.com/services.html"><!-- TODO: replace with real domain -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="UAE Golden Visa, Emirates ID &amp; PRO Services | abc BUSINESS SOLUTION">
+<meta property="og:title" content="UAE Golden Visa, Emirates ID &amp; PRO Services | Alphytix BUSINESS SOLUTION">
 <meta property="og:description" content="Golden Visa assistance, Emirates ID support and PRO services in the UAE.">
 <meta property="og:url" content="https://www.example.com/services.html"><!-- TODO: add og:image -->
 <link rel="icon" type="image/png" href="Alpha.png">
@@ -229,9 +229,16 @@ footer ul{list-style:none;padding:0;margin:0}footer li{margin:6px 0}footer a{tex
 
 #top .site-logo {
   display: block;
-  width: 110px;
+  width: 150px;
   height: auto;
   object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    #top .site-logo {
+        width: 110px;
+        height: auto;
+    }
 }
 
 #top nav {
@@ -1291,6 +1298,56 @@ body.menu-open #top .burger span:nth-child(3) {
 }
 
 
+/* Overview cards: align icon and heading golden visa,etc.. */
+
+#overview .card-heading {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+#overview .card-heading > :first-child {
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    margin: 0;
+}
+
+#overview .card-heading h3 {
+    flex: 1;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.3;
+}
+
+/* cards: align icon and heading golden visa etc.. */
+
+#golden-visa .card-heading,#emirates-id .card-heading,#pro-services .card-heading,#why .card-heading {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+#golden-visa .card-heading > :first-child,#emirates-id .card-heading > :first-child,#pro-services .card-heading > :first-child,#why .card-heading > :first-child {
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    margin: 0;
+}
+
+#golden-visa .card-heading h3,#emirates-id .card-heading h3,#pro-services .card-heading h3,#why .card-heading h3 {
+    flex: 1;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.3;
+}
+
 </style>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -1315,10 +1372,10 @@ body.menu-open #top .burger span:nth-child(3) {
   <div class="wrap bar">
 
     <!-- Logo -->
-    <a class="logo" href="#" aria-label="abc BUSINESS SOLUTION home">
+    <a class="logo" href="#" aria-label="Alphytix BUSINESS SOLUTION home">
       <img
-        src="model3.png"
-        alt="abc BUSINESS SOLUTION"
+        src="Model 2.png"
+        alt="Alphytix BUSINESS SOLUTION"
         class="site-logo">
     </a>
 
@@ -1434,16 +1491,16 @@ body.menu-open #top .burger span:nth-child(3) {
   </div>
 
   
-  <a class="mobile-contact-link" href="tel:+971XXXXXXXXX">
+  <a class="mobile-contact-link" href="tel:+971501762994">
     <span aria-hidden="true"><i class="fas fa-phone"></i></span>
-    <span>+971 XX XXX XXXX</span>
+    <span>+971 50176 2994</span>
   </a>
 
   <a class="mobile-contact-link whatsapp-link"
-     href="https://wa.me/971XXXXXXXXX"
+     href="https://wa.me/+971501762994?text=Hi, I’m interested in your UAE business services. Could you please share more details? Thank you!"
      target="_blank" rel="noopener noreferrer">
     <span aria-hidden="true"><i class="fab fa-whatsapp"></i></span>
-    <span>+971 XX XXX XXXX</span>
+    <span>+971 50176 2994</span>
   </a>
 
 </div>
@@ -1593,47 +1650,77 @@ document.addEventListener("keydown", event => {
 
 
 /* ===== Content helpers ===== */
-const cards=(p,items,cols,link)=>{const g=h("div","grid "+(cols||"g3"));items.forEach((s,ix)=>{const [i,t,x]=s.split("|");const k=h(link?"a":"div","card rv "+["rv-l","rv-z","rv-r"][ix%3]);if(link)k.href="#"+link[t];k.append(ic(i),h("h3",null,t),h("p",null,x));if(link)k.append(h("span","go","Learn More"));g.append(k)});p.append(g)};
+
+const cards = (p, items, cols, link) => {
+  const g = h("div", "grid " + (cols || "g3"));
+
+  items.forEach((s, ix) => {
+    const [i, t, x] = s.split("|");
+    const k = h(
+      link ? "a" : "div",
+      "card rv " + ["rv-l", "rv-z", "rv-r"][ix % 3]
+    );
+
+    if (link) k.href = "#" + link[t];
+
+    // Put icon and heading in the same row
+    const heading = h("div", "card-heading");
+    heading.append(ic(i), h("h3", null, t));
+
+    k.append(heading, h("p", null, x));
+
+    if (link) k.append(h("span", "go", "Learn More"));
+
+    g.append(k);
+  });
+
+  p.append(g);
+};
+
 const steps=(p,arr,cls)=>{const o=h("ol","steps "+cls);arr.forEach((s,i)=>{const [t,d]=s.split("|");const li=h("li","st rv");li.append(h("span","nm",String(i+1)),h("h3",null,t));if(d)li.append(h("p",null,d));o.append(li)});p.append(o)};
 const sub=(p,t)=>p.append(h("h3","sub3",t));
 const cta=(p,t,href)=>{const d=h("div","cta-row");d.append(h("a","btn",t,{href:href||CONTACT}));p.append(d)};
 const note=(p,t)=>p.append(h("p","note",t));
+
 function sec(o){const s=h("section",o.alt?"alt":"",null,{id:o.id,"aria-labelledby":o.id+"-h"});const w=h("div","wrap");const d=h("div","hd rv");
  d.append(h("span","lab",o.lab),h("h2",null,o.h2,{id:o.id+"-h"}));if(o.sh)d.append(h("p","sh",o.sh));d.append(h("p",null,o.desc));w.append(d);o.body(w);s.append(w);$("#sections").append(s)}
 
 /* ===== 1. Overview (three services on this page) ===== */
 const ANCH={"Golden Visa":"golden-visa","Emirates ID":"emirates-id","PRO Services":"pro-services"};
-sec({id:"overview",alt:1,lab:"Overview",h2:"How We Can Help",desc:"Explore our residency, identity and government-procedure services, organised to help you find the assistance you need.",body:w=>cards(w,["star|Golden Visa|Guidance on eligibility, documents and the application process.","id|Emirates ID|Help with the documentation and administrative steps for Emirates ID.","gear|PRO Services|Support with government paperwork, company documentation and compliance."],"g3",ANCH)});
+sec({id:"overview",alt:1,lab:"Overview",h2:"How We Can Help",desc:"Explore our residency, identity and government-procedure services, organised to help you find the assistance you need.",
+body:w=>cards(w,["star|Golden Visa|Guidance on eligibility, documents and the application process.","id|Emirates ID|Help with the documentation and administrative steps for Emirates ID.","gear|PRO Services|Support with government paperwork, company documentation and compliance."],"g3",ANCH)});
 
 /* ===== 3. Golden visa ===== */
 sec({id:"golden-visa",lab:"Golden Visa",h2:"UAE Golden Visa Assistance",desc:"Explore assistance with understanding eligibility, preparing documents and navigating the application process for the UAE Golden Visa.",body:w=>{
- cards(w,["users|Who Can Apply?|Eligibility depends on the applicable UAE residence rules and your qualifying category. Approval is not promised.","building|Investor Eligibility|Qualifying investment routes may be available, subject to thresholds, ownership conditions and official requirements.","pin|Property Investor|Qualifying real-estate investment may be a route, subject to current property-value, ownership and authority requirements.","star|Entrepreneur|Eligible entrepreneurs may qualify through recognised projects or other approved routes, subject to criteria.","doc|Skilled Professional|A potential route for qualifying professionals, subject to current education, occupation, salary and employment requirements.","id|Emirates ID|Emirates ID arrangements relate to the residency process; issuance and biometrics depend on your circumstances and the procedure.","users|Family Sponsorship|Eligible holders may be able to sponsor qualifying family members, subject to current rules and authority requirements."],"g3");
+ cards(w,["users|Who Can Apply?|Eligibility depends on the applicable UAE residence rules and your qualifying category. Approval is not promised.","building|Investor Eligibility|Qualifying investment routes may be available, subject to thresholds, ownership conditions and official requirements.","pin|Property Investor|Qualifying real-estate investment may be a route, subject to current property-value, ownership and authority requirements.","star|Entrepreneur|Eligible entrepreneurs may qualify through recognised projects or other approved routes, subject to criteria.","doc|Skilled Professional|A potential route for qualifying professionals, subject to current education, occupation, salary and employment requirements.","id|Emirates ID|Emirates ID arrangements relate to the residency process; issuance and biometrics depend on your circumstances and the procedure.","users|Family Sponsorship|Eligible holders may be able to sponsor qualifying family members, subject to current rules and authority requirements."],"g4");
  sub(w,"Required Documents (indicative)");const u=h("ul","chk rv");["Passport.","Current visa or residency information, where applicable.","Photograph.","Relevant investment or property documents, where applicable.","Employment, educational or professional documents, where applicable.","Any additional documents requested by the relevant authority."].forEach(x=>u.append(h("li",null,x)));w.append(u);
  note(w,"Required documents depend on the eligibility category and current official requirements.");
  sub(w,"Application Process");steps(w,["Initial eligibility assessment","Document checklist and preparation","Application submission through the appropriate channel","Authority review and any additional requirements","Outcome and subsequent residency formalities, where applicable"],"s5");
- note(w,"Golden Visa rules, thresholds, salary criteria, categories and documents can change. Eligibility is determined by the relevant UAE authority under the regulations in force at the time of application. Verify current criteria before publishing or relying on this page.");cta(w,"Check Golden Visa Eligibility")}});
-
+ note(w,"Golden Visa rules, thresholds, salary criteria, categories and documents can change. Eligibility is determined by the relevant UAE authority under the regulations in force at the time of application. Verify current criteria before publishing or relying on this page.");
+//  cta(w,"Check Golden Visa Eligibility")
+}});
 /* ===== 4-7. Service sections ===== */
 sec({id:"emirates-id",alt:1,lab:"Emirates ID",h2:"Emirates ID Services",sh:"Assistance With Your Emirates ID Process",desc:"Get guidance on the documentation and administrative steps associated with Emirates ID applications and related residency procedures.",body:w=>{
- cards(w,["id|New Emirates ID Application Assistance|Guidance on preparing and following the application steps.","gear|Emirates ID Renewal Guidance|Help understanding renewal requirements.","doc|Replacement or Lost Card Assistance|Guidance on documents needed to request a replacement.","doc|Document Preparation|Organising the paperwork your application needs.","pin|Biometrics Appointment Guidance|Information on appointments, where applicable.","globe|Residency Application Support|Emirates ID steps linked to residency applications.","users|Family Member Emirates ID Guidance|Guidance for dependants, where applicable."],"g3");
- note(w,"We assist with procedures and do not issue Emirates IDs or guarantee processing times. Requirements, appointments and processing depend on your situation and the relevant UAE authority.");cta(w,"Get Emirates ID Assistance")}});
+ cards(w,["id|New Emirates ID Application Assistance|Guidance on preparing and following the application steps.","gear|Emirates ID Renewal Guidance|Help understanding renewal requirements.","doc|Replacement or Lost Card Assistance|Guidance on documents needed to request a replacement.","doc|Document Preparation|Organising the paperwork your application needs.","pin|Biometrics Appointment Guidance|Information on appointments, where applicable.","globe|Residency Application Support|Emirates ID steps linked to residency applications.","users|Family Member Emirates ID Guidance|Guidance for dependants, where applicable."],"g4");
+ note(w,"We assist with procedures and do not issue Emirates IDs or guarantee processing times. Requirements, appointments and processing depend on your situation and the relevant UAE authority.");cta(w, "Get Emirates ID Assistance", "cdemo.html")}});
 sec({id:"pro-services",lab:"PRO Services",h2:"PRO Services in the UAE",sh:"Simplify Your Government Procedures",desc:"Get administrative support with government-related paperwork, company documentation and business compliance processes, according to the services required by your company.",body:w=>{
  cards(w,["doc|Government Document Processing|Preparing and submitting documents to relevant departments.","building|Company Formation Support|Administrative help through formation steps.","gear|Trade License Renewal|Support with renewal paperwork.","pen|Trade License Amendment|Help with changes to licence details.","globe|Immigration Services|Visa and residency paperwork support.","users|Labour-Related Services|Administrative support for labour procedures.","id|Establishment Card Assistance|Help with establishment card processes.","shield|Government Approvals|Guidance on approvals your activity may need.","doc|Document Clearing|Attestation and document processing support.","pen|Typing Services|Preparation of forms and applications.","list|Government Submissions|Submitting applications through the appropriate channels."].map(x=>x.replace("list|","doc|")),"g4");
- note(w,"We assist with procedures; decisions are made by government departments, and approvals are not guaranteed. Alphytix BUSINESS SOLUTION has no government authority.");cta(w,"Request PRO Service")}});
+ note(w,"We assist with procedures; decisions are made by government departments, and approvals are not guaranteed. Alphytix BUSINESS SOLUTION has no government authority.");cta(w,"Request PRO Service","cdemo.html")}});
 /* ===== Why ===== */
-{const s=h("section","dark",null,{id:"why","aria-labelledby":"why-h"}),w=h("div","wrap"),d=h("div","hd rv");d.append(h("span","lab","Why Alphytix",{style:"color:#ff8a8f"}),h("h2",null,"Why Choose Alphytix BUSINESS SOLUTION?",{id:"why-h"}));w.append(d);
- cards(w,["users|Guidance Through Each Step|Support from first question to next steps.","doc|Organised Documentation Support|Clear checklists and tidy paperwork.","building|Solutions Based on Your Business Needs|Options matched to your activity and goals.","globe|Clear Communication Throughout the Process|Straightforward updates and explanations."].map(x=>x),"g4");s.append(w);$("#sections").append(s)}
-sec({id:"process",lab:"Process",h2:"How Our Service Process Works",desc:"A simple four-step approach.",body:w=>steps(w,["Tell Us What You Need|Share your business or service requirements.","Understand Your Options|Review relevant requirements and possible routes.","Prepare Your Documents|Receive guidance on the applicable paperwork.","Proceed With the Application|Complete the relevant steps through the appropriate authority."],"s4")});
+// {const s=h("section","dark",null,{id:"why","aria-labelledby":"why-h"}),w=h("div","wrap"),d=h("div","hd rv");d.append(h("span","lab","Why Alphytix",{style:"color:#ff8a8f"}),h("h2",null,"Why Choose Alphytix BUSINESS SOLUTION?",{id:"why-h"}));w.append(d);
+//  cards(w,["users|Guidance Through Each Step|Support from first question to next steps.","doc|Organised Documentation Support|Clear checklists and tidy paperwork.","building|Solutions Based on Your Business Needs|Options matched to your activity and goals.","globe|Clear Communication Throughout the Process|Straightforward updates and explanations."].map(x=>x),"g4");s.append(w);$("#sections").append(s)}
+// sec({id:"process",lab:"Process",h2:"How Our Service Process Works",desc:"A simple four-step approach.",body:w=>steps(w,["Tell Us What You Need|Share your business or service requirements.","Understand Your Options|Review relevant requirements and possible routes.","Prepare Your Documents|Receive guidance on the applicable paperwork.","Proceed With the Application|Complete the relevant steps through the appropriate authority."],"s4")});
 
 /* ===== FAQ ===== */
-const FAQ=[["Who may qualify for the UAE Golden Visa?","Eligibility depends on the qualifying category and the rules in force when you apply. The relevant UAE authority makes the decision."],["Can you assist with Emirates ID documentation?","We can guide you on documents and steps. We do not issue Emirates IDs, and processing depends on the authority."],["What services are included in PRO support?","PRO support covers administrative help such as document processing, renewals, amendments and submissions. The services you need are agreed with you in advance."],["What documents will I need?","Typically a passport and photograph, plus category-specific documents. We will give you a checklist for your case."],["Can you guarantee approval or a processing time?","No. Decisions and timelines belong to the relevant authority. We help you prepare and follow the correct procedure."],["Do you help with other services, such as company setup?","Yes. Business setup, free zone and mainland support are covered on our business setup pages."],["How can I request a consultation?","Use the Talk to an Expert button to open our contact form and tell us what you need."]];
+
+/* const FAQ=[["Who may qualify for the UAE Golden Visa?","Eligibility depends on the qualifying category and the rules in force when you apply. The relevant UAE authority makes the decision."],["Can you assist with Emirates ID documentation?","We can guide you on documents and steps. We do not issue Emirates IDs, and processing depends on the authority."],["What services are included in PRO support?","PRO support covers administrative help such as document processing, renewals, amendments and submissions. The services you need are agreed with you in advance."],["What documents will I need?","Typically a passport and photograph, plus category-specific documents. We will give you a checklist for your case."],["Can you guarantee approval or a processing time?","No. Decisions and timelines belong to the relevant authority. We help you prepare and follow the correct procedure."],["Do you help with other services, such as company setup?","Yes. Business setup, free zone and mainland support are covered on our business setup pages."],["How can I request a consultation?","Use the Talk to an Expert button to open our contact form and tell us what you need."]];
 sec({id:"faq",alt:1,lab:"FAQ",h2:"Frequently Asked Questions",desc:"Short answers to common questions. Details depend on your situation and the relevant authority.",body:w=>{const f=h("div","faq rv");
  FAQ.forEach(([q,a],i)=>{const hh=h("h3"),b=h("button",null,q,{type:"button","aria-expanded":"false","aria-controls":"fa"+i,id:"fq"+i});const p=h("div","pn",a,{id:"fa"+i,role:"region","aria-labelledby":"fq"+i,hidden:""});
-  b.onclick=()=>{const o=b.getAttribute("aria-expanded")==="true";b.setAttribute("aria-expanded",!o);p.hidden=o};hh.append(b);f.append(hh,p)});w.append(f)}});
+  b.onclick=()=>{const o=b.getAttribute("aria-expanded")==="true";b.setAttribute("aria-expanded",!o);p.hidden=o};hh.append(b);f.append(hh,p)});w.append(f)}}); */
 
 /* ===== Final CTA ===== */
 {const s=h("section","dark fin"),w=h("div","wrap");w.append(h("h2",null,"Need Help With Your UAE Business Setup?"),h("p",null,"Tell us what you need, and our team can help you understand the next steps."));
- const b=h("div","btns");b.append(h("a","btn","Talk to an Expert",{href:CONTACT}),
+ const b=h("div","btns");b.append(h("a","btn","Talk to an Expert",{href:"cdemo.html"}),
  h("a","btn o","Explore Services",{href:"demo.html#services"}));w.append(b);s.append(w);$("#sections").append(s)}
 
 
@@ -1645,7 +1732,7 @@ sec({id:"faq",alt:1,lab:"FAQ",h2:"Frequently Asked Questions",desc:"Short answer
   const logo = h("img", null, "", {
     src: "white model2.png",
     alt: "Alphytix BUSINESS SOLUTION",
-    style: "width:120px;max-width:100%;height:auto;object-fit:contain;display:block;margin-bottom:12px;"
+    style: "width:150px;max-width:100%;height:auto;object-fit:contain;display:block;margin-bottom:12px;"
   });
 
   br.append(
@@ -1701,9 +1788,20 @@ sec({id:"faq",alt:1,lab:"FAQ",h2:"Frequently Asked Questions",desc:"Short answer
     [
       "LET'S CONNECT",
       [
-        ["WhatsApp", "https://wa.me/971501762994?text=Hello"],
+        ["WhatsApp",{
+    url: "https://wa.me/971501762994?text=Hi, I’m interested in your UAE business services. Could you please share more details? Thank you!",
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }],
         ["Call Us", "tel:+971501762994"],
-        ["Email Us", "https://mail.google.com/mail/?view=cm&fs=1&to=info@yourdomain.com"]
+        ["Email Us",[
+  {
+    url: "https://mail.google.com/mail/?view=cm&fs=1&to=alphytixbusinesssolution@gmail.com",
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }
+]
+        ]
       ]
     ]
   ];
