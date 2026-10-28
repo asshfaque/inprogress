@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Alphytix BUSINESS SOLUTION | UAE Business Setup &amp; Corporate Services</title>
 
@@ -239,11 +239,17 @@ footer a:hover{color:#ff8a8f;transform:translateX(4px)}
 
 .site-logo {
   display: block;
-  width: 110px;
+  width: 150px;
   height: auto;
   object-fit: contain;
 }
 
+@media (max-width: 768px) {
+    .site-logo {
+        width: 110px;
+        height: auto;
+    }
+}
 
 /* WHAT IS ABC */
 .what-abc {
@@ -2383,6 +2389,124 @@ footer a:hover{color:#ff8a8f;transform:translateX(4px)}
         width: 100%;
     }
 }
+
+/* Business Setup Solutions Background */
+#solutions {
+    background-image: url("https://images.pexels.com/photos/28350363/pexels-photo-28350363.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 80px 0;
+    isolation: isolate;
+}
+
+/* Dark blue overlay for readability */
+#solutions::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(3, 11, 91, 0.78);
+    z-index: -1;
+}
+
+/* Keep section content above the background */
+#solutions .wrap {
+    position: relative;
+}
+
+
+/* Align logo and card title horizontally */
+/* Align icon and heading perfectly */
+#sol-g .card-heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3px;
+    margin-bottom: 12px;
+}
+
+/* Icon alignment */
+#sol-g .card-heading svg {
+    display: block;
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    margin: 0;
+}
+
+/* Heading alignment */
+#sol-g .card-heading h3 {
+    display: block;
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    position: relative;
+    top: 2px;
+} 
+
+/* one of the card start a business,get visa,etc.. */
+#looking-g .card-heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3px;
+    margin-bottom: 12px;
+}
+
+/* Icon alignment */
+#looking-g .card-heading svg {
+    display: block;
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    margin: 0;
+}
+
+/* Heading alignment */
+#looking-g .card-heading h3 {
+    display: block;
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    position: relative;
+    top: 2px;
+}
+/* another card start with personalized guidence etc.. */
+
+#why-g .card-heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3px;
+    margin-bottom: 12px;
+}
+
+/* Icon alignment */
+#why-g .card-heading svg {
+    display: block;
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    margin: 0;
+}
+
+/* Heading alignment */
+#why-g .card-heading h3 {
+    display: block;
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    position: relative;
+    top: 2px;
+}
+
+/* to fit in phone view */
+
+
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
@@ -2411,7 +2535,7 @@ footer a:hover{color:#ff8a8f;transform:translateX(4px)}
 
     <!-- Left: Contact numbers -->
     <div class="top-contact-info">
-      <a href="https://wa.me/+971501762994?text=Hello" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+      <a href="https://wa.me/+971501762994?text=Hi, I’m interested in your UAE business services. Could you please share more details? Thank you!" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-4.7A8.5 8.5 0 1 1 20.5 11.5Z"/>
           <path d="M8.5 8.5c.5 2.5 2.5 4.5 5 5l1.5-1.2 2 1c-.2 1.5-1.2 2.2-2.5 2.2-3.5-.5-6.5-3.5-7-7 0-1.3.7-2.3 2.2-2.5l1 2Z"/>
@@ -2477,8 +2601,8 @@ footer a:hover{color:#ff8a8f;transform:translateX(4px)}
 
 
   <div class="wrap bar">
-<a class="logo" href="#top" aria-label="abc BUSINESS SOLUTION home">
-  <img src="model3.png" alt="Alphytix BUSINESS SOLUTION" class="site-logo">
+<a class="logo" href="#top" aria-label="Alphytix BUSINESS SOLUTION home">
+  <img src="Model 2.png" alt="Alphytix BUSINESS SOLUTION" class="site-logo">
 </a>
 <nav aria-label="Main navigation">
   <ul class="nav-links" id="mainNav">
@@ -2581,7 +2705,7 @@ footer a:hover{color:#ff8a8f;transform:translateX(4px)}
     </a>
 
     <a class="mobile-contact-link whatsapp-link"
-       href="https://wa.me/+971501762994?text=Hello"
+       href="https://wa.me/+971501762994?text=Hi, I’m interested in your UAE business services. Could you please share more details? Thank you!"
        target="_blank" rel="noopener noreferrer">
       <i class="fab fa-whatsapp"></i>
       <span>+971 50 176 2994</span>
@@ -2661,7 +2785,7 @@ footer a:hover{color:#ff8a8f;transform:translateX(4px)}
             <div class="mini-field">
                 <label for="email">Email Address <b>*</b></label>
                 <input id="email" name="email" type="email"
-                    placeholder="you@example.com"
+                    placeholder="alphytixbusinesssolution@gmail.com"
                     autocomplete="email" maxlength="254" required>
             </div>
 
@@ -2797,9 +2921,9 @@ footer a:hover{color:#ff8a8f;transform:translateX(4px)}
 <section id="solutions">
   <div class="wrap">
     <div class="hd rv">
-      <span class="lab">EXPLORE YOUR OPTIONS</span>
-      <h2>Complete Business Setup Solutions</h2>
-      <p>Choose a business structure that aligns with your goals, activities and long-term plans.</p>
+      <span class="lab" style="color:white">EXPLORE YOUR OPTIONS</span>
+      <h2 style="color:white">Complete Business Setup Solutions</h2>
+      <p style="color:white">Choose a business structure that aligns with your goals, activities and long-term plans.</p>
     </div>
     <div class="grid g3" id="sol-g">      
     </div>
@@ -3131,13 +3255,30 @@ if (mainNav && burger) {
 
 
 
-function card(parent,o){
- const a=h(o.href?"a":"div","card rv");
- if(o.href)a.href=o.href;
- a.append(ic(o.icon),h("h3",null,o.title),h("p",null,o.text));
- if(o.cta)a.append(h("span","go",o.cta));
- parent.append(a);return a;
+
+function card(parent, o) {
+  const a = h(o.href ? "a" : "div", "card rv");
+
+  if (o.href) a.href = o.href;
+
+  // Icon and title in the same row
+  const heading = h("div", "card-heading");
+  heading.append(
+    ic(o.icon),
+    h("h3", null, o.title)
+  );
+
+  a.append(
+    heading,
+    h("p", null, o.text)
+  );
+
+  if (o.cta) a.append(h("span", "go", o.cta));
+
+  parent.append(a);
+  return a;
 }
+
 [
 ["building","Start a Business","Explore company formation options in the UAE.","#solutions"],
 ["id","Get a Visa","Understand available visa and residency assistance.","#services"],
@@ -3358,7 +3499,7 @@ const FOOT=[
 const logo = h("img", null, "", {
   src: "white model2.png",
   alt: "Alphytix BUSINESS SOLUTION",
-  style: "width:120px;max-width:100%;height:auto;object-fit:contain;display:block;margin-bottom:12px;"
+  style: "width:150px;max-width:100%;height:auto;object-fit:contain;display:block;margin-bottom:12px;"
 });
 
 brand.append(logo,
@@ -3373,9 +3514,9 @@ brand.append(logo,
 
 
 const contactLinks = {
-  "WhatsApp": "https://wa.me/971501762994?text=Hello",
+  "WhatsApp": "https://wa.me/971501762994?text=Hi, I’m interested in your UAE business services. Could you please share more details? Thank you!",target:"_blank" ,rel:"noopener noreferrer",
   "Call Us": "tel:+971501762994",
-  "Email Us":"https://mail.google.com/mail/?view=cm&fs=1&to=info@yourdomain.com"
+  "Email Us":"https://mail.google.com/mail/?view=cm&fs=1&to=alphytixbusinesssolution@gmail.com",target:"_blank",rel:"noopener noreferrer"
 };
 
 const pageLinks = {
