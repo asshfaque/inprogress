@@ -3511,12 +3511,20 @@ brand.append(logo,
  FOOT.forEach(([title,items,destination])=>{const col=h("div");col.append(h("h4",null,title));const ul=h("ul");items.forEach(label=>{const li=h("li");
  
 
-
+const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
 const contactLinks = {
-  "WhatsApp": "https://wa.me/971501762994?text=Hi, I’m interested in your UAE business services. Could you please share more details? Thank you!",target:"_blank" ,rel:"noopener noreferrer",
+  "WhatsApp":
+    "https://wa.me/971501762994?text=" +
+    encodeURIComponent(
+      "Hi, I'm interested in your UAE business services. Could you please share more details? Thank you!"
+    ),
+
   "Call Us": "tel:+971501762994",
-  "Email Us":"https://mail.google.com/mail/?view=cm&fs=1&to=alphytixbusinesssolution@gmail.com",target:"_blank",rel:"noopener noreferrer"
+
+  "Email Us": isMobile
+    ? "mailto:alphytixbusinesssolution@gmail.com"
+    : "https://mail.google.com/mail/?view=cm&fs=1&to=alphytixbusinesssolution@gmail.com"
 };
 
 const pageLinks = {
