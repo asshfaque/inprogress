@@ -1726,6 +1726,20 @@ sec({id:"faq",alt:1,lab:"FAQ",h2:"Frequently Asked Questions",desc:"Short answer
 
  /* ===== Footer ===== */
 
+
+/* Footer copyright year */
+$("#yr").textContent = new Date().getFullYear();
+
+/* ===== Hero headline word reveal (safe DOM, no innerHTML) ===== */
+{const t=$("#hero-h"),txt=t.textContent;t.textContent="";t.setAttribute("aria-label",txt);txt.split(" ").forEach((x,i)=>{const w=h("span","w",null,{"aria-hidden":"true"}),sp=h("span",null,x);sp.style.setProperty("--i",i);w.append(sp);t.append(w," ")})}
+/* ===== Scroll progress bar ===== */
+{const p=$("#prog");let q=false;const u=()=>{const m=document.documentElement.scrollHeight-innerHeight;p.style.transform="scaleX("+(m>0?Math.min(scrollY/m,1):0)+")";q=false};addEventListener("scroll",()=>{if(!q){q=true;requestAnimationFrame(u)}},{passive:true})}
+/* ===== Reveal on scroll ===== */
+const io="IntersectionObserver" in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}}),{threshold:.1}):null;
+document.querySelectorAll(".rv").forEach(e=>{e.style.transitionDelay=Math.min([...e.parentElement.children].indexOf(e),6)*60+"ms";io?io.observe(e):e.classList.add("on")});
+
+/* ===== Footer ===== */
+
 {
   const br = h("div", "br");
 
@@ -1782,18 +1796,34 @@ sec({id:"faq",alt:1,lab:"FAQ",h2:"Frequently Asked Questions",desc:"Short answer
       "COMPANY",
       [
         ["About", "index.html#why"],
-        ["Why Alphytix", "index.html#why"],
+        ["Why Alphytix", "index.html#why"]
       ]
     ],
     [
       "LET'S CONNECT",
       [
-        ["WhatsApp","https://wa.me/971501762994?text=Hi, I’m interested in your UAE business services. Could you please share more details? Thank you!"],
-        ["Call Us", "tel:+971501762994"],
-        ["Email Us", "https://mail.google.com/mail/?view=cm&fs=1&to=alphytixbusinesssolution@gmail.com"]
+        ["WhatsApp", "#"],
+        ["Call Us", "#"],
+        ["Email Us", "#"]
       ]
     ]
   ];
+
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  const contactLinks = {
+    "WhatsApp":
+      "https://wa.me/971501762994?text=" +
+      encodeURIComponent(
+        "Hi, I'm interested in your UAE business services. Could you please share more details? Thank you!"
+      ),
+
+    "Call Us": "tel:+971501762994",
+
+    "Email Us": isMobile
+      ? "mailto:alphytixbusinesssolution@gmail.com"
+      : "https://mail.google.com/mail/?view=cm&fs=1&to=alphytixbusinesssolution@gmail.com"
+  };
 
   FOOT.forEach(([title, items]) => {
     const col = h("div");
@@ -1801,22 +1831,28 @@ sec({id:"faq",alt:1,lab:"FAQ",h2:"Frequently Asked Questions",desc:"Short answer
 
     const ul = h("ul");
 
-    items.forEach(([label, href]) => {
-  const li = h("li");
+    items.forEach(([label, originalHref]) => {
+      const li = h("li");
 
-  const isExternalApp =
-    label === "WhatsApp" || label === "Email Us";
+      const href = contactLinks[label] || originalHref;
 
-  li.append(
-    h("a", null, label, {
-      href: href,
-      target: isExternalApp ? "_blank" : "_self",
-      rel: isExternalApp ? "noopener noreferrer" : undefined
-    })
-  );
+      const isExternal =
+        label === "WhatsApp" ||
+        (label === "Email Us" && !isMobile);
 
-  ul.append(li);
-});
+      const link = h("a", null, label, {
+        href: href,
+        target: isExternal ? "_blank" : "_self"
+      });
+
+      if (isExternal) {
+        link.setAttribute("rel", "noopener noreferrer");
+      }
+
+      li.append(link);
+      ul.append(li);
+    });
+
     col.append(ul);
     $("#fg").append(col);
   });
@@ -1824,14 +1860,6 @@ sec({id:"faq",alt:1,lab:"FAQ",h2:"Frequently Asked Questions",desc:"Short answer
 
 /* Footer copyright year */
 $("#yr").textContent = new Date().getFullYear();
-
-/* ===== Hero headline word reveal (safe DOM, no innerHTML) ===== */
-{const t=$("#hero-h"),txt=t.textContent;t.textContent="";t.setAttribute("aria-label",txt);txt.split(" ").forEach((x,i)=>{const w=h("span","w",null,{"aria-hidden":"true"}),sp=h("span",null,x);sp.style.setProperty("--i",i);w.append(sp);t.append(w," ")})}
-/* ===== Scroll progress bar ===== */
-{const p=$("#prog");let q=false;const u=()=>{const m=document.documentElement.scrollHeight-innerHeight;p.style.transform="scaleX("+(m>0?Math.min(scrollY/m,1):0)+")";q=false};addEventListener("scroll",()=>{if(!q){q=true;requestAnimationFrame(u)}},{passive:true})}
-/* ===== Reveal on scroll ===== */
-const io="IntersectionObserver" in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}}),{threshold:.1}):null;
-document.querySelectorAll(".rv").forEach(e=>{e.style.transitionDelay=Math.min([...e.parentElement.children].indexOf(e),6)*60+"ms";io?io.observe(e):e.classList.add("on")});
 
 /* ===== Hero background video ===== */
 
