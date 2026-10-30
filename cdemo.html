@@ -561,16 +561,16 @@ $("#yr").textContent = new Date().getFullYear();
 </script>
 
 <!-- mail passing to phone app  -->
-<script>
-const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+ <script>
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-if (isMobile) {
-    document.querySelectorAll(".emailLink").forEach(link => {
-        link.href = "mailto:alphytixbusinesssolution@gmail.com";
-        link.removeAttribute("target");
-        link.removeAttribute("rel");
-    });
-}
+  const emailLink = document.getElementById("emailLink");
+
+  if (emailLink && isMobile) {
+    emailLink.href = "mailto:alphytixbusinesssolution@gmail.com";
+    emailLink.removeAttribute("target");
+    emailLink.removeAttribute("rel");
+  }
 </script>
 </body>
 </html>
